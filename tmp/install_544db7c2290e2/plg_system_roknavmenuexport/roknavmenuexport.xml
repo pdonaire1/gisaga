@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension group="system" method="upgrade" type="plugin" version="2.5">
+    <name>System - RokNavMenu Export</name>
+    <creationDate>December 17, 2013</creationDate>
+    <author>RocketTheme, LLC</author>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2013 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.0.1</version>
+    <description>Plugin to export RokNavMenu html for non Joomla Applications</description>
+    <files>
+        <filename plugin="roknavmenuexport">roknavmenuexport.php</filename>
+        <folder>roknavmenuexport</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <filename>RT-LICENSE.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_roknavmenuexport.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field description="DESC.SELECT_MENU_ITEM" label="LABEL.SELECT_MENU_ITEM" name="highlighted_menu_item" state="1" type="menuitem"/>
+                <field default="joomla_menu_header.inc" descritpion="DESC.HEADER_FILE" label="LABEL.HEADER_FILE" name="header_file" size="25" type="text"/>
+                <field default="guest_joomla_menu.inc" descritpion="DESC.GUEST_MENU_FILE" label="LABEL.GUEST_MENU_FILE" name="guest_menu_file" size="25" type="text"/>
+                <field default="reg_joomla_menu.inc" descritpion="DESC.REG_MENU_FILE" label="LABEL.REG_MENU_FILE" name="reg_menu_file" size="25" type="text"/>
+                <field default="relative" description="Select whether you want full or relative urls output for links." label="URL Type" name="url_type" type="list">
+                    <option value="relative">relative</option>
+                    <option value="full">full</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+            <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+</extension>
