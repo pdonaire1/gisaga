@@ -142,6 +142,7 @@
 	$p28 = $_POST['p28'];
 	
 	$p29 = $_POST['p29'];
+	$ultimap = $_POST['ultimap'];
 	
 	$p30_a = $_POST['p30_a'];
 	$p30_b = $_POST['p30_b'];
@@ -574,11 +575,71 @@
 	}
 	// fin p11
 	
-	
-	$p19t = $p19v1 + $p19v2 + $p19v3 + $p19v4 + $p19v5+ $p19v6 + $p19v7 + $p19v8;
-	if ($p19t == 100 and $p19nsnr != 101)
+	$p19t = $p19v1 + $p19v2 + $p19v3 + $p19v4 + $p19v5 + $p19v6 + $p19v7 + $p19v8;
+	if ($p19t == 36 and $p19nsnr != 101)
 	{
-		
+		$retornar = 0;
+		if (
+		    ($p19v1 == $p19v2) ||
+		    ($p19v1 == $p19v3) ||
+		    ($p19v1 == $p19v4) ||
+		    ($p19v1 == $p19v5) ||
+		    ($p19v1 == $p19v6) ||
+		    ($p19v1 == $p19v7) ||
+		    ($p19v1 == $p19v8)
+		){
+			$retornar = 1;
+			
+		}
+		if (
+		    ($p19v2 == $p19v3) ||
+		    ($p19v2 == $p19v4) ||
+		    ($p19v2 == $p19v5) ||
+		    ($p19v2 == $p19v6) ||
+		    ($p19v2 == $p19v7) ||
+		    ($p19v2 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p19v3 == $p19v4) ||
+		    ($p19v3 == $p19v5) ||
+		    ($p19v3 == $p19v6) ||
+		    ($p19v3 == $p19v7) ||
+		    ($p19v3 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p19v4 == $p19v5) ||
+		    ($p19v4 == $p19v6) ||
+		    ($p19v4 == $p19v7) ||
+		    ($p19v4 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p19v5 == $p19v6) ||
+		    ($p19v5 == $p19v7) ||
+		    ($p19v5 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p19v6 == $p19v7) ||
+		    ($p19v6 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p19v7 == $p19v8)
+		){
+			$retornar = 1;
+		}
+		if ($retornar == 1) {
+			echo "Error fatal p19";
+			exit();	
+		}
 		$p19total = "$p19v1, $p19v2, $p19v3, $p19v4, $p19v5, $p19v6, $p19v7, $p19v8";
 	}
 	elseif ($p19nsnr == 101)
@@ -598,6 +659,29 @@
 		echo "Error fatal p19";
 		exit();
 	}
+	//$p19t = $p19v1 + $p19v2 + $p19v3 + $p19v4 + $p19v5+ $p19v6 + $p19v7 + $p19v8;
+	//if ($p19t == 100 and $p19nsnr != 101)
+	//{
+	//	
+	//	$p19total = "$p19v1, $p19v2, $p19v3, $p19v4, $p19v5, $p19v6, $p19v7, $p19v8";
+	//}
+	//elseif ($p19nsnr == 101)
+	//{
+	//	$p19v1 = "";
+	//	$p19v2 = "";
+	//	$p19v3 = "";
+	//	$p19v4 = "";
+	//	$p19v5 = "";
+	//	$p19v6 = "";
+	//	$p19v7 = "";
+	//	$p19v8 = "";
+	//	$p19total = "101";
+	//}
+	//else
+	//{
+	//	echo "Error fatal p19";
+	//	exit();
+	//}
 	// fin p19
 	
 	$p24t = $p24v1 + $p24v2 + $p24v3 + $p24v4 + $p24v5;
@@ -622,10 +706,51 @@
 	// fin p24
 	
 	
+	
 	$p27t = $p27v1 + $p27v2 + $p27v3 + $p27v4 + $p27v5 + $p27v6;
-	if ($p27t == 100 and $p27nsnr != 101)
+	if ($p27t == 36 and $p27nsnr != 101)
 	{
-		$p27total = "$p27v1, $p27v2, $p27v3, $p27v4, $p27v5, $p27v6";
+		$retornar = 0;
+		if (
+		    ($p27v1 == $p27v2) ||
+		    ($p27v1 == $p27v3) ||
+		    ($p27v1 == $p27v4) ||
+		    ($p27v1 == $p27v5) ||
+		    ($p27v1 == $p27v6) 
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p27v2 == $p27v3) ||
+		    ($p27v2 == $p27v4) ||
+		    ($p27v2 == $p27v5) ||
+		    ($p27v2 == $p27v6)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p27v3 == $p27v4) ||
+		    ($p27v3 == $p27v5) ||
+		    ($p27v3 == $p27v6)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p27v4 == $p27v5) ||
+		    ($p27v4 == $p27v6)
+		){
+			$retornar = 1;
+		}
+		if (
+		    ($p27v5 == $p27v6)
+		){
+			$retornar = 1;
+		}
+		if ($retornar == 1) {
+			echo "Error fatal p27";
+			exit();	
+		}
+		$p27total = "$p27v1, $p27v2, $p27v3, $p27v4, $p27v5, $p27v6, $p27v7, $p27v8";
 	}
 	elseif ($p27nsnr == 101)
 	{
@@ -635,6 +760,8 @@
 		$p27v4 = "";
 		$p27v5 = "";
 		$p27v6 = "";
+		$p27v7 = "";
+		$p27v8 = "";
 		$p27total = "101";
 	}
 	else
@@ -642,16 +769,36 @@
 		echo "Error fatal p27";
 		exit();
 	}
-	// fin p27
-	
-	if (isset($p30_a) && !empty ($p30_a) )
-	{
-	}
-	else
-	{
-		echo "Error fatal p30_a";
-		exit();
-	}
+	//$p27t = $p27v1 + $p27v2 + $p27v3 + $p27v4 + $p27v5 + $p27v6;
+	//if ($p27t == 100 and $p27nsnr != 101)
+	//{
+	//	$p27total = "$p27v1, $p27v2, $p27v3, $p27v4, $p27v5, $p27v6";
+	//}
+	//elseif ($p27nsnr == 101)
+	//{
+	//	$p27v1 = "";
+	//	$p27v2 = "";
+	//	$p27v3 = "";
+	//	$p27v4 = "";
+	//	$p27v5 = "";
+	//	$p27v6 = "";
+	//	$p27total = "101";
+	//}
+	//else
+	//{
+	//	echo "Error fatal p27";
+	//	exit();
+	//}
+	//// fin p27
+	//
+	//if (isset($p30_a) && !empty ($p30_a) )
+	//{
+	//}
+	//else
+	//{
+	//	echo "Error fatal p30_a";
+	//	exit();
+	//}
 	
 	
 	
@@ -957,6 +1104,8 @@
 	//   pregunta 30:::
 	echo llenar($p30_a, $p30_b, $p30_c, 30, $id_encuesta, $con);
 	
+	//   pregunta ultima:::
+	echo llenar($ultimap, "","", 31, $id_encuesta, $con);
 	
 	
 	

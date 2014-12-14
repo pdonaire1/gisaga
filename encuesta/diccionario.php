@@ -76,7 +76,7 @@
 		"p9g" => "Biomasa",
 		"p9h" => "Biocombustibles",
 		"p9i" => "NsNr",
-		"peso" => "Peso. [(1 > 2), (1 > 3), (2 > 3), ... ]",
+		"peso" => "Peso. Ordene de mayor (1 en adelante) a menor",
 		
 		
 		"p10" => "10. Durante los próximos 20 años, ¿cómo será el crecimiento del consumo de los 
@@ -282,7 +282,9 @@
 		"pt4" => "Políticas públicas ambientales y energéticas",
 		"pt5" => "Percepciones sobre la pertinencia del análisis prospectivo",
 		
-		
+		"ultimap" => "31. Interesado en conocer los resultados de esta investigación",
+		"ultimapa" => "Si",
+		"ultimapb" => "No",
 		
 		//_______________________________________
 		

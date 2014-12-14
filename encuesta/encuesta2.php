@@ -85,7 +85,7 @@ include ("diccionario.php");
 			<center>
 				
 				<form id="form" action="pr0c3s4r.php" method="post" onsubmit="return validar(this)" >
-					<table border ="0" width="500" style="border: 1px solid white;" class="TablaBlanca" >
+					<table border ="1" width="500" style="border: 1px solid white;" class="TablaBlanca" >
 						<tr>
 							<td>
 								<p>
@@ -144,7 +144,7 @@ include ("diccionario.php");
 										</td>
 										<td>
 											<td width="100">
-												<br /><br />
+												<br />
 												<?php echo $q['p0_3']; ?>
 											</td>
 											<td width="300">
@@ -901,61 +901,61 @@ include ("diccionario.php");
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v1" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19a']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v2" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19b']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v3" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19c']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v4" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19d']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v5" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19e']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v6" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19f']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v7" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19g']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p19v8" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p19h']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
-												<font color="red" ><?php echo $q['DebeSumar']; ?></font>
+												<font color="red" ><?php echo $q['peso']; ?></font>
 												
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
@@ -1207,47 +1207,47 @@ include ("diccionario.php");
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v1" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27a']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v2" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27b']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v3" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27c']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v4" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27d']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v5" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27e']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p27v6" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27f']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
-												<font color="red" ><?php echo $q['DebeSumar']; ?></font>
+												<font color="red" ><?php echo $q['peso']; ?></font>
 												
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
@@ -1358,6 +1358,26 @@ include ("diccionario.php");
 									</tr>
 									<tr>
 										<td>
+											&nbsp;&nbsp; &nbsp; &nbsp;
+											<?php echo $q['ultimap']; ?>
+											
+											&nbsp;&nbsp; &nbsp; &nbsp;
+											<table><tr>
+													<td>
+														&nbsp;&nbsp; &nbsp; &nbsp;
+														<input type="radio" name="ultimap" value="1" checked="checked" />
+														<?php echo $q['ultimapa']; ?>
+														<input type="radio" name="ultimap" value="2" />
+														
+														<?php echo $q['ultimapb']; ?>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<br>
 											&nbsp;&nbsp; &nbsp; &nbsp;
 											<?php echo $q['p31']; ?>
 											<br>

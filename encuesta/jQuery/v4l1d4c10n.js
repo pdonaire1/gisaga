@@ -653,46 +653,139 @@ function validar(form){
 	
 	if (form.elements['p19nsnr'].checked == false)
 	{
-		if (form.elements['p19v1'].value!="")
+		p91 = parseInt(form.elements['p19v1'].value);
+		p92 = parseInt(form.elements['p19v2'].value);
+		p93 = parseInt(form.elements['p19v3'].value);
+		p94 = parseInt(form.elements['p19v4'].value);
+		p95 = parseInt(form.elements['p19v5'].value);
+		p96 = parseInt(form.elements['p19v6'].value);
+		p97 = parseInt(form.elements['p19v7'].value);
+		p98 = parseInt(form.elements['p19v8'].value);
+		//alert(p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98);
+		if ((p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98) == 36 )
 		{
-			p91 = parseFloat(form.elements['p19v1'].value);
+			
+			var retornar = 0;
+			if (
+			    (p91 == p92) ||
+			    (p91 == p93) ||
+			    (p91 == p94) ||
+			    (p91 == p95) ||
+			    (p91 == p96) ||
+			    (p91 == p97) ||
+			    (p91 == p98)
+			){
+				retornar = 1;
+				
+			}
+			if (
+			    (p92 == p93) ||
+			    (p92 == p94) ||
+			    (p92 == p95) ||
+			    (p92 == p96) ||
+			    (p92 == p97) ||
+			    (p92 == p98)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p93 == p94) ||
+			    (p93 == p95) ||
+			    (p93 == p96) ||
+			    (p93 == p97) ||
+			    (p93 == p98)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p94 == p95) ||
+			    (p94 == p96) ||
+			    (p94 == p97) ||
+			    (p94 == p98)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p95 == p96) ||
+			    (p95 == p97) ||
+			    (p95 == p98)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p96 == p97) ||
+			    (p96 == p98)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p97 == p98)
+			){
+				retornar = 1;
+			}
+			if (retornar == 1) {
+				alert("La pregunta 19 debe sumar 36 (sin repetir los valores)");
+				return false;
+			}
 		}
-		if (form.elements['p19v2'].value!="")
+		else
 		{
-			p92 = parseFloat(form.elements['p19v2'].value);
-		}
-		if (form.elements['p19v3'].value!="")
-		{
-			p93 = parseFloat(form.elements['p19v3'].value);
-		}
-		if (form.elements['p19v4'].value!="")
-		{
-			p94 = parseFloat(form.elements['p19v4'].value);
-		}
-		if (form.elements['p19v5'].value!="")
-		{
-			p95 = parseFloat(form.elements['p19v5'].value);
-		}
-		if (form.elements['p19v6'].value!="")
-		{
-			p96 = parseFloat(form.elements['p19v6'].value);
-		}
-		if (form.elements['p19v7'].value!="")
-		{
-			p97 = parseFloat(form.elements['p19v7'].value);
-		}
-		if (form.elements['p19v8'].value!="")
-		{
-			p98 = parseFloat(form.elements['p19v8'].value);
-		}
-		p10=0.0;
-		p10 = p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98;
-		if ( p10 != 100)
-		{
-			alert("La pregunta 19 debe sumar 100%");
+			alert("La pregunta 19 debe sumar 36 (sin repetir los valores).");
 			return false;
 		}
 	}
+	else{
+		p91=0.0;
+		p92=0.0;
+		p93=0.0;
+		p94=0.0;
+		p95=0.0;
+		p96=0.0;
+		p97=0.0;
+		p98=0.0;
+	}
+	//if (form.elements['p19nsnr'].checked == false)
+	//{
+	//	if (form.elements['p19v1'].value!="")
+	//	{
+	//		p91 = parseFloat(form.elements['p19v1'].value);
+	//	}
+	//	if (form.elements['p19v2'].value!="")
+	//	{
+	//		p92 = parseFloat(form.elements['p19v2'].value);
+	//	}
+	//	if (form.elements['p19v3'].value!="")
+	//	{
+	//		p93 = parseFloat(form.elements['p19v3'].value);
+	//	}
+	//	if (form.elements['p19v4'].value!="")
+	//	{
+	//		p94 = parseFloat(form.elements['p19v4'].value);
+	//	}
+	//	if (form.elements['p19v5'].value!="")
+	//	{
+	//		p95 = parseFloat(form.elements['p19v5'].value);
+	//	}
+	//	if (form.elements['p19v6'].value!="")
+	//	{
+	//		p96 = parseFloat(form.elements['p19v6'].value);
+	//	}
+	//	if (form.elements['p19v7'].value!="")
+	//	{
+	//		p97 = parseFloat(form.elements['p19v7'].value);
+	//	}
+	//	if (form.elements['p19v8'].value!="")
+	//	{
+	//		p98 = parseFloat(form.elements['p19v8'].value);
+	//	}
+	//	p10=0.0;
+	//	p10 = p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98;
+	//	if ( p10 != 100)
+	//	{
+	//		alert("La pregunta 19 debe sumar 100%");
+	//		return false;
+	//	}
+	//}
 	
 	
 	bandera = 0;
@@ -798,38 +891,108 @@ function validar(form){
 	p96 = 0.0;
 	if (form.elements['p27nsnr'].checked == false)
 	{
-		if (form.elements['p27v1'].value!="")
+		p91 = parseInt(form.elements['p27v1'].value);
+		p92 = parseInt(form.elements['p27v2'].value);
+		p93 = parseInt(form.elements['p27v3'].value);
+		p94 = parseInt(form.elements['p27v4'].value);
+		p95 = parseInt(form.elements['p27v5'].value);
+		p96 = parseInt(form.elements['p27v6'].value);
+		//alert(p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98);
+		if ((p91 + p92 + p93 + p94 + p95 + p96) == 21 )
 		{
-			p91 = parseFloat(form.elements['p27v1'].value);
+			
+			var retornar = 0;
+			if (
+			    (p91 == p92) ||
+			    (p91 == p93) ||
+			    (p91 == p94) ||
+			    (p91 == p95) ||
+			    (p91 == p96)
+			){
+				retornar = 1;
+				
+			}
+			if (
+			    (p92 == p93) ||
+			    (p92 == p94) ||
+			    (p92 == p95) ||
+			    (p92 == p96)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p93 == p94) ||
+			    (p93 == p95) ||
+			    (p93 == p96)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p94 == p95) ||
+			    (p94 == p96)
+			){
+				retornar = 1;
+			}
+			if (
+			    (p95 == p96)
+			){
+				retornar = 1;
+			}
+			if (retornar == 1) {
+				alert("La pregunta 27 debe sumar 36 (sin repetir los valores)");
+				return false;
+			}
 		}
-		if (form.elements['p27v2'].value!="")
+		else
 		{
-			p92 = parseFloat(form.elements['p27v2'].value);
-		}
-		if (form.elements['p27v3'].value!="")
-		{
-			p93 = parseFloat(form.elements['p27v3'].value);
-		}
-		if (form.elements['p27v4'].value!="")
-		{
-			p94 = parseFloat(form.elements['p27v4'].value);
-		}
-		if (form.elements['p27v5'].value!="")
-		{
-			p95 = parseFloat(form.elements['p27v5'].value);
-		}
-		if (form.elements['p27v6'].value!="")
-		{
-			p96 = parseFloat(form.elements['p27v6'].value);
-		}
-		p10=0.0;
-		p10 = p91 + p92 + p93 + p94 + p95 + p96;
-		if ( p10 != 100)
-		{
-			alert("La pregunta 27 debe sumar 100%");
+			alert("La pregunta 27 debe sumar 36 (sin repetir los valores).");
 			return false;
 		}
 	}
+	else{
+		p91=0.0;
+		p92=0.0;
+		p93=0.0;
+		p94=0.0;
+		p95=0.0;
+		p96=0.0;
+		p97=0.0;
+		p98=0.0;
+	}
+	//if (form.elements['p27nsnr'].checked == false)
+	//{
+	//	if (form.elements['p27v1'].value!="")
+	//	{
+	//		p91 = parseFloat(form.elements['p27v1'].value);
+	//	}
+	//	if (form.elements['p27v2'].value!="")
+	//	{
+	//		p92 = parseFloat(form.elements['p27v2'].value);
+	//	}
+	//	if (form.elements['p27v3'].value!="")
+	//	{
+	//		p93 = parseFloat(form.elements['p27v3'].value);
+	//	}
+	//	if (form.elements['p27v4'].value!="")
+	//	{
+	//		p94 = parseFloat(form.elements['p27v4'].value);
+	//	}
+	//	if (form.elements['p27v5'].value!="")
+	//	{
+	//		p95 = parseFloat(form.elements['p27v5'].value);
+	//	}
+	//	if (form.elements['p27v6'].value!="")
+	//	{
+	//		p96 = parseFloat(form.elements['p27v6'].value);
+	//	}
+	//	p10=0.0;
+	//	p10 = p91 + p92 + p93 + p94 + p95 + p96;
+	//	if ( p10 != 100)
+	//	{
+	//		alert("La pregunta 27 debe sumar 100%");
+	//		return false;
+	//	}
+	//}
 	
 	
 	
