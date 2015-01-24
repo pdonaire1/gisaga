@@ -92,6 +92,12 @@
 	$p18e = $_POST['p18e'];
 	$p18e = $_POST['p18f'];
 	$p18g = $_POST['p18g'];
+	$p18g = $_POST['p18h'];
+	$p18g = $_POST['p18i'];
+	$p18g = $_POST['p18j'];
+	$p18g = $_POST['p18k'];
+	$p18g = $_POST['p18l'];
+	$p18g = $_POST['p18m'];
 	$p18nsnr = $_POST['p18nsnr'];
 	echo "P18888888AAA:::::::::: $p18b";
 	$p18 = ""; //En este caso p18 es p18t o total, se dejó asi para no cambiar el resto de
@@ -245,10 +251,16 @@
 		isset($p18d) && !empty ($p18d) ||
 		isset($p18e) && !empty ($p18e) ||
 		isset($p18f) && !empty ($p18f) ||
-		isset($p18g) && !empty ($p18g)
+		isset($p18g) && !empty ($p18g) ||
+		isset($p18g) && !empty ($p18h) ||
+		isset($p18g) && !empty ($p18i) ||
+		isset($p18g) && !empty ($p18j) ||
+		isset($p18g) && !empty ($p18k) ||
+		isset($p18g) && !empty ($p18l) ||
+		isset($p18g) && !empty ($p18m) 
 	)
 	{
-		$p18 = "$p18a, $p18b, $p18c, $p18d, $p18e";
+		$p18 = "$p18a, $p18b, $p18c, $p18d, $p18e, $p18f, $p18g, $p18h, $p18i, $p18j, $p18k, $p18l, $p18m";
 		echo "P 18 TOTAL ******** $p18";
 	}else
 	{
@@ -708,7 +720,7 @@
 	
 	
 	$p27t = $p27v1 + $p27v2 + $p27v3 + $p27v4 + $p27v5 + $p27v6;
-	if ($p27t == 36 and $p27nsnr != 101)
+	if ($p27t == 21 and $p27nsnr != 101)
 	{
 		$retornar = 0;
 		if (
@@ -766,6 +778,8 @@
 	}
 	else
 	{
+		echo $p27nsnr;
+		echo $p27t;	
 		echo "Error fatal p27";
 		exit();
 	}
@@ -1106,6 +1120,9 @@
 	
 	//   pregunta ultima:::
 	echo llenar($ultimap, "","", 31, $id_encuesta, $con);
+	
+	
+	
 	
 	
 	

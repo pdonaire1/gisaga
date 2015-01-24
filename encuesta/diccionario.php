@@ -12,7 +12,7 @@
 		
 		"p2" => "2. ¿Cree usted que el crecimiento de la población y el aumento del ingreso 
 				serán las principales fuerzas que impulsen el crecimiento de la demanda de
-				<br>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;energía en los próximos 20 años?",
+				energía en los próximos 20 años?",
 		"p2a" => "Si",
 		"p2b" => "No",
 		"p2c" => "NsNr",
@@ -184,7 +184,7 @@
 		"p21d" => "Incremento de los costos de producción",
 		"p21e" => "Especulación financiera internacional",
 		"p21f" => "NsNr",
-		"p21g" => "Otros",
+		"p21g" => "Si usted no está deacuerdo con la afirmación anterior, manifieste el porqué",
 		
 		"p22" => "22. ¿Cree usted que las políticas públicas ambientales orientadas a disminuir 
 				las emisiones de CO2 alcanzarán un impacto significativo en el 2030?",
@@ -254,7 +254,7 @@
 		
 		"p30" => "30. Indique cuáles son las tres fuentes de información que usted considere 
 					más confiables para sus propios análisis prospectivos y proyecciones",
-		
+		"p30nsnr" => "NsNr",
 		"p31" => "Observaciones",
 		
 		"p32" => "Nombre del encuestador",

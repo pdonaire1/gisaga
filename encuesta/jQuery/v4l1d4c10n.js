@@ -1,4 +1,8 @@
 
+function checkear() {
+    document.getElementById("p21_para_checkear").checked = true;
+}
+
 function SoloNumeros(e)
 {
 	
@@ -23,6 +27,152 @@ function SoloNumeros(e)
 	}
 	
 	
+}
+
+function ValidarPeso8Valores(numero) {
+    var p9 = [
+	parseInt(form.elements['p'+numero+'v1'].value),
+	parseInt(form.elements['p'+numero+'v2'].value),
+	parseInt(form.elements['p'+numero+'v3'].value),
+	parseInt(form.elements['p'+numero+'v4'].value),
+	parseInt(form.elements['p'+numero+'v5'].value),
+	parseInt(form.elements['p'+numero+'v6'].value),
+	parseInt(form.elements['p'+numero+'v7'].value),
+	parseInt(form.elements['p'+numero+'v8'].value),
+    ];
+    for (var i=0; i<8; i++) {
+	if (isNaN(p9[i])) {
+	    p9[i]=0;
+	}
+    }
+    var p9_aux = 0;
+    for (var i=1; i<8; i++) {
+	for (var j=0; j<7; j++) {
+	    if (p9[j] > p9[j+1]) {
+		p9_aux = p9[j];
+		p9[j] = p9[j+1];
+		p9[j+1] = p9_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    var entro = false;
+    for (var i=0; i<8; i++) {
+	if ( (p9[i] != 0) ) {
+	    if ( (p9[i]!= 1) && (entro == false) ) {
+		alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		return false;
+	    }
+	    entro = true;
+	    if (isNaN(p9[i+1])==false) {
+	        if ( (p9[i]+1) != p9[i+1] ) {
+		    alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		    return false;
+	        }
+	    }
+	}
+    }
+    if (entro == false) {
+	alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+	return false;
+    }
+    return true;
+}
+
+function ValidarPeso5Valores(numero) {
+    var p9 = [
+	parseInt(form.elements['p'+numero+'v1'].value),
+	parseInt(form.elements['p'+numero+'v2'].value),
+	parseInt(form.elements['p'+numero+'v3'].value),
+	parseInt(form.elements['p'+numero+'v4'].value),
+	parseInt(form.elements['p'+numero+'v5'].value),
+    ];
+    for (var i=0; i<5; i++) {
+	if (isNaN(p9[i])) {
+	    p9[i]=0;
+	}
+    }
+    var p9_aux = 0;
+    for (var i=1; i<5; i++) {
+	for (var j=0; j<4; j++) {
+	    if (p9[j] > p9[j+1]) {
+		p9_aux = p9[j];
+		p9[j] = p9[j+1];
+		p9[j+1] = p9_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    var entro = false;
+    for (var i=0; i<5; i++) {
+	if ( (p9[i] != 0) ) {
+	    if ( (p9[i]!= 1) && (entro == false) ) {
+		alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		return false;
+	    }
+	    entro = true;
+	    if (isNaN(p9[i+1])==false) {
+		if ( (p9[i]+1) != p9[i+1] ) {
+		    alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		    return false;
+		}
+	    }
+	    
+	}
+    }
+    if (entro == false) {
+	alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+	return false;
+    }
+    return true;
+}
+function ValidarPeso6Valores(numero) {
+    var p9 = [
+	parseInt(form.elements['p'+numero+'v1'].value),
+	parseInt(form.elements['p'+numero+'v2'].value),
+	parseInt(form.elements['p'+numero+'v3'].value),
+	parseInt(form.elements['p'+numero+'v4'].value),
+	parseInt(form.elements['p'+numero+'v5'].value),
+	parseInt(form.elements['p'+numero+'v6'].value),
+    ];
+    for (var i=0; i<6; i++) {
+	if (isNaN(p9[i])) {
+	    p9[i]=0;
+	}
+    }
+    var p9_aux = 0;
+    for (var i=1; i<6; i++) {
+	for (var j=0; j<5; j++) {
+	    if (p9[j] > p9[j+1]) {
+		p9_aux = p9[j];
+		p9[j] = p9[j+1];
+		p9[j+1] = p9_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    var entro = false;
+    for (var i=0; i<6; i++) {
+	if ( (p9[i] != 0) ) {
+	    if ( (p9[i]!= 1) && (entro == false) ) {
+		alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		return false;
+	    }
+	    entro = true;
+	    if (isNaN(p9[i+1])==false) {
+		if ( (p9[i]+1) != p9[i+1] ) {
+		    alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+		    return false;
+		}
+	    }
+	    
+	}
+    }
+    if (entro == false) {
+	alert("La pregunta "+numero+" es de tipo Peso. Ordene de mayor (1 en adelante) a menor.");
+	return false;
+    }
+    return true;
 }
 
 function validar(form){
@@ -267,86 +417,7 @@ function validar(form){
 	
 	if (form.elements['p9nsnr'].checked == false)
 	{
-		p91 = parseInt(form.elements['p9v1'].value);
-		p92 = parseInt(form.elements['p9v2'].value);
-		p93 = parseInt(form.elements['p9v3'].value);
-		p94 = parseInt(form.elements['p9v4'].value);
-		p95 = parseInt(form.elements['p9v5'].value);
-		p96 = parseInt(form.elements['p9v6'].value);
-		p97 = parseInt(form.elements['p9v7'].value);
-		p98 = parseInt(form.elements['p9v8'].value);
-		//alert(p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98);
-		if ((p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98) == 36 )
-		{
-			
-			var retornar = 0;
-			if (
-			    (p91 == p92) ||
-			    (p91 == p93) ||
-			    (p91 == p94) ||
-			    (p91 == p95) ||
-			    (p91 == p96) ||
-			    (p91 == p97) ||
-			    (p91 == p98)
-			){
-				retornar = 1;
-				
-			}
-			if (
-			    (p92 == p93) ||
-			    (p92 == p94) ||
-			    (p92 == p95) ||
-			    (p92 == p96) ||
-			    (p92 == p97) ||
-			    (p92 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p93 == p94) ||
-			    (p93 == p95) ||
-			    (p93 == p96) ||
-			    (p93 == p97) ||
-			    (p93 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p94 == p95) ||
-			    (p94 == p96) ||
-			    (p94 == p97) ||
-			    (p94 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p95 == p96) ||
-			    (p95 == p97) ||
-			    (p95 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p96 == p97) ||
-			    (p96 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p97 == p98)
-			){
-				retornar = 1;
-			}
-			if (retornar == 1) {
-				alert("La pregunta 9 debe sumar 36 (sin repetir los valores)");
-				return false;
-			}
-		}
-		else
-		{
-			alert("La pregunta 9 debe sumar 36 (sin repetir los valores).");
-			return false;
-		}
+		ValidarPeso8Valores("9");
 	}
 	else{
 		p91=0.0;
@@ -444,53 +515,7 @@ function validar(form){
 	
 	if (form.elements['p10nsnr'].checked == false)
 	{
-		p91 = parseInt(form.elements['p10v1'].value);
-		p92 = parseInt(form.elements['p10v2'].value);
-		p93 = parseInt(form.elements['p10v3'].value);
-		p94 = parseInt(form.elements['p10v4'].value);
-		p95 = parseInt(form.elements['p10v5'].value);
-		//alert(p91 + p92 + p93 + p94 + p95);
-		if ((p91 + p92 + p93 + p94 + p95) == 15 )
-		{
-			
-			var retornar = 0;
-			if (
-			    (p91 == p92) ||
-			    (p91 == p93) ||
-			    (p91 == p94) ||
-			    (p91 == p95) 
-			){
-				retornar = 1;
-				
-			}
-			if (
-			    (p92 == p93) ||
-			    (p92 == p94) ||
-			    (p92 == p95)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p93 == p94) ||
-			    (p93 == p95)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p94 == p95)
-			){
-				retornar = 1;
-			}
-			if (retornar == 1) {
-				alert("La pregunta 10 debe sumar 36, sin repetir los valores (siendo 1 > 5)");
-				return false;
-			}
-		}
-		else
-		{
-			alert("La pregunta 10 debe sumar 36, sin repetir los valores (siendo 1 > 5)");
-			return false;
-		}
+		ValidarPeso5Valores("10");
 	}
 	else{
 		p91=0.0;
@@ -542,53 +567,7 @@ function validar(form){
 	
 	if (form.elements['p11nsnr'].checked == false)
 	{
-		p91 = parseInt(form.elements['p11v1'].value);
-		p92 = parseInt(form.elements['p11v2'].value);
-		p93 = parseInt(form.elements['p11v3'].value);
-		p94 = parseInt(form.elements['p11v4'].value);
-		p95 = parseInt(form.elements['p11v5'].value);
-		//alert(p91 + p92 + p93 + p94 + p95);
-		if ((p91 + p92 + p93 + p94 + p95) == 15 )
-		{
-			
-			var retornar = 0;
-			if (
-			    (p91 == p92) ||
-			    (p91 == p93) ||
-			    (p91 == p94) ||
-			    (p91 == p95) 
-			){
-				retornar = 1;
-				
-			}
-			if (
-			    (p92 == p93) ||
-			    (p92 == p94) ||
-			    (p92 == p95)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p93 == p94) ||
-			    (p93 == p95)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p94 == p95)
-			){
-				retornar = 1;
-			}
-			if (retornar == 1) {
-				alert("La pregunta 11 debe sumar 36, sin repetir los valores (siendo 1 > 5)");
-				return false;
-			}
-		}
-		else
-		{
-			alert("La pregunta 11 debe sumar 36, sin repetir los valores (siendo 1 > 5)");
-			return false;
-		}
+		ValidarPeso5Valores("11");
 	}
 	//if (form.elements['p11nsnr'].checked == false)
 	//{
@@ -653,86 +632,7 @@ function validar(form){
 	
 	if (form.elements['p19nsnr'].checked == false)
 	{
-		p91 = parseInt(form.elements['p19v1'].value);
-		p92 = parseInt(form.elements['p19v2'].value);
-		p93 = parseInt(form.elements['p19v3'].value);
-		p94 = parseInt(form.elements['p19v4'].value);
-		p95 = parseInt(form.elements['p19v5'].value);
-		p96 = parseInt(form.elements['p19v6'].value);
-		p97 = parseInt(form.elements['p19v7'].value);
-		p98 = parseInt(form.elements['p19v8'].value);
-		//alert(p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98);
-		if ((p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98) == 36 )
-		{
-			
-			var retornar = 0;
-			if (
-			    (p91 == p92) ||
-			    (p91 == p93) ||
-			    (p91 == p94) ||
-			    (p91 == p95) ||
-			    (p91 == p96) ||
-			    (p91 == p97) ||
-			    (p91 == p98)
-			){
-				retornar = 1;
-				
-			}
-			if (
-			    (p92 == p93) ||
-			    (p92 == p94) ||
-			    (p92 == p95) ||
-			    (p92 == p96) ||
-			    (p92 == p97) ||
-			    (p92 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p93 == p94) ||
-			    (p93 == p95) ||
-			    (p93 == p96) ||
-			    (p93 == p97) ||
-			    (p93 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p94 == p95) ||
-			    (p94 == p96) ||
-			    (p94 == p97) ||
-			    (p94 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p95 == p96) ||
-			    (p95 == p97) ||
-			    (p95 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p96 == p97) ||
-			    (p96 == p98)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p97 == p98)
-			){
-				retornar = 1;
-			}
-			if (retornar == 1) {
-				alert("La pregunta 19 debe sumar 36 (sin repetir los valores)");
-				return false;
-			}
-		}
-		else
-		{
-			alert("La pregunta 19 debe sumar 36 (sin repetir los valores).");
-			return false;
-		}
+		ValidarPeso8Valores("19");
 	}
 	else{
 		p91=0.0;
@@ -891,63 +791,7 @@ function validar(form){
 	p96 = 0.0;
 	if (form.elements['p27nsnr'].checked == false)
 	{
-		p91 = parseInt(form.elements['p27v1'].value);
-		p92 = parseInt(form.elements['p27v2'].value);
-		p93 = parseInt(form.elements['p27v3'].value);
-		p94 = parseInt(form.elements['p27v4'].value);
-		p95 = parseInt(form.elements['p27v5'].value);
-		p96 = parseInt(form.elements['p27v6'].value);
-		//alert(p91 + p92 + p93 + p94 + p95 + p96 + p97 + p98);
-		if ((p91 + p92 + p93 + p94 + p95 + p96) == 21 )
-		{
-			
-			var retornar = 0;
-			if (
-			    (p91 == p92) ||
-			    (p91 == p93) ||
-			    (p91 == p94) ||
-			    (p91 == p95) ||
-			    (p91 == p96)
-			){
-				retornar = 1;
-				
-			}
-			if (
-			    (p92 == p93) ||
-			    (p92 == p94) ||
-			    (p92 == p95) ||
-			    (p92 == p96)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p93 == p94) ||
-			    (p93 == p95) ||
-			    (p93 == p96)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p94 == p95) ||
-			    (p94 == p96)
-			){
-				retornar = 1;
-			}
-			if (
-			    (p95 == p96)
-			){
-				retornar = 1;
-			}
-			if (retornar == 1) {
-				alert("La pregunta 27 debe sumar 36 (sin repetir los valores)");
-				return false;
-			}
-		}
-		else
-		{
-			alert("La pregunta 27 debe sumar 36 (sin repetir los valores).");
-			return false;
-		}
+		ValidarPeso6Valores("27");
 	}
 	else{
 		p91=0.0;
@@ -1066,11 +910,12 @@ function validar(form){
 	
 	/////////////////////////////////////////////////////////777
 	
-	
-	if (form.elements['p30_a'].value=="")
-	{
-		alert("Por favor llene la pregunta 30 a");
-		return false;
+	if (form.elements['p30_nsnr'].checked==false){
+		if (form.elements['p30_a'].value=="")
+		{
+			alert("Por favor llene la pregunta 30 a");
+			return false;
+		}
 	}
 
 	

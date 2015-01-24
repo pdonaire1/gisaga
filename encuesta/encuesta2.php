@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 
+include("parte_arriba.html");
 //include("parte_arriba_encuesta.html");
 include ("conexion.php");
 include ("diccionario.php");
@@ -13,7 +14,7 @@ include ("diccionario.php");
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 -->
 <?php
-
+	
 ?>
 
 
@@ -607,35 +608,35 @@ include ("diccionario.php");
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p10v1" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p10a']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p10v2" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p10b']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p10v3" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p10c']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p10v4" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p10d']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p10v5" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p10e']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
@@ -658,35 +659,35 @@ include ("diccionario.php");
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p11v1" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p11a']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p11v2" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p11b']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p11v3" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p11c']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p11v4" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p11d']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
 												<input type="number" name="p11v5" min="0" max="100" 
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />%
+												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p11e']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
@@ -1029,9 +1030,17 @@ include ("diccionario.php");
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
-												<input type="radio" name="p21" value="7" />
+												<br>
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												<input type="radio" name="p21" value="7"
+												id="p21_para_checkear"
+												/>
+												
 												21.a. <?php echo $q['p21g']; ?>
-												<input type="text" name="p21_t" size="107" />
+												<input type="text" name="p21_t" size="107"
+												onkeypress="checkear()"
+												/>
 												
 						
 											</p>
@@ -1353,6 +1362,11 @@ include ("diccionario.php");
 												c. 
 												<input type="text" name="p30_c" size="80" />
 												<br>
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												<input type="checkbox" name="p30_nsnr" />
+												<?php echo $q['p30nsnr']; ?>
+												
 											</p>
 										</td>
 									</tr>

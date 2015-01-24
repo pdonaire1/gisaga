@@ -252,7 +252,7 @@ while ($fila = mysql_fetch_array($consulta_p)) {
                 Pregunta
             </td>
             <td>
-                respuesta
+                Respuesta
             </td>
             <td>
                 Respuesta opcional
@@ -269,9 +269,99 @@ while ($fila = mysql_fetch_array($consulta_p)) {
     //~ echo "<br>";
     //~ if ($fila['pregunta'] == 1){
 		
-		if ($fila['pregunta']==8 or $fila['pregunta']==9 or $fila['pregunta']==10 or $fila['pregunta']==11 or $fila['pregunta']==19
-				or $fila['pregunta']==24 or $fila['pregunta']==27
+		if ($fila['pregunta']== 31)
+		{
+			echo "<tr>";	
+			echo "<td>".$q['ultimap']."</td>";
+			if ($fila['respuesta'] == 1)
+				echo "<td>- Si.</td>";
+			if ($fila['respuesta'] == 2)
+				echo "<td>- No.</td>";
+			echo "<td></td>";
+			echo "</tr>";
+			
+			
+		}
+		elseif ($fila['pregunta']==9 or $fila['pregunta']==10 or $fila['pregunta']==11
+		    or $fila['pregunta']==19 or $fila['pregunta']==27
 		){
+			echo "</tr><tr><td>".$q['p'.$fila['pregunta']]."</td>";
+			if ($fila["respuesta"] == 101)
+			{
+				echo "<td>- NsNr.</td>";
+			}
+			else
+			{
+				 /***************************************************************************/
+				$valor=split(",",$fila["respuesta"]);
+				//~ $valor=split("|",$respuesta);
+				/************************************************************************/
+				//~ echo $valore[1];
+				echo "<td>";
+				//~ echo "ID: $fila[pregunta]";
+				//~ foreach ($valore as $valor){
+					//~ echo $valor."<br>";
+					
+				
+					if ($valor[0] =="")
+						echo "- ".$q["p".$fila["pregunta"]."a"].": 0<br>";
+					else
+						echo "- ".$q["p".$fila["pregunta"]."a"].": ".$valor[0]."<br>";
+					
+					if ($valor[1] =="")
+						echo "- ".$q["p".$fila["pregunta"]."b"].": 0<br>";
+					else
+						echo "- ".$q["p".$fila["pregunta"]."b"].": ".$valor[1]."<br>";
+					
+					if ($valor[2] =="")
+						echo "- ".$q["p".$fila["pregunta"]."c"].": 0<br>";
+					else
+						echo "- ".$q["p".$fila["pregunta"]."c"].": ".$valor[2]."<br>";
+					
+					if ($valor[3] =="")
+						echo "- ".$q["p".$fila["pregunta"]."d"].": 0<br>";
+					else
+						echo "- ".$q["p".$fila["pregunta"]."d"].": ".$valor[3]."<br>";
+					
+					if ($valor[4] =="")
+						echo "- ".$q["p".$fila["pregunta"]."e"].": 0<br>";
+					else
+						echo "- ".$q["p".$fila["pregunta"]."e"].": ".$valor[4]."<br>";
+					
+
+					if ($fila['pregunta'] != 10 and $fila['pregunta'] != 11)
+					{
+						//~ echo "- ".$q["p".$fila["pregunta"]."g"].": ".$valor[6]."%<br>";
+						if ($valor[5] ==" ")
+							echo "- ".$q["p".$fila["pregunta"]."f"].": 0<br>";
+						else
+							echo "- ".$q["p".$fila["pregunta"]."f"].": ".$valor[5]."<br>";
+					}
+					if (
+					    $fila['pregunta'] != 10 and $fila['pregunta'] != 11
+					    and $fila['pregunta'] != 27
+					)
+					{
+						//~ echo "- ".$q["p".$fila["pregunta"]."g"].": ".$valor[6]."%<br>";
+						if ($valor[6] ==" ")
+							echo "- ".$q["p".$fila["pregunta"]."g"].": 0<br>";
+						else
+							echo "- ".$q["p".$fila["pregunta"]."g"].": ".$valor[6]."<br>";
+					}
+					if ($q["p".$fila["pregunta"]."h"])
+					{
+						//~ echo "- ".$q["p".$fila["pregunta"]."h"].": ".$valor[7]."%<br>";
+						if ($valor[7] ==" ")
+							echo "- ".$q["p".$fila["pregunta"]."h"].": 0<br>";
+						else
+							echo "- ".$q["p".$fila["pregunta"]."h"].": ".$valor[7]."<br>";
+					}
+				//~ echo "<td>".$fila["respuesta"]."</td>";
+			}
+			
+			echo "<td></td>";
+		}
+		elseif ($fila['pregunta']==8 or $fila['pregunta']==24){
 			echo "</tr><tr><td>".$q['p'.$fila['pregunta']]."</td>";
 			if ($fila["respuesta"] == 101)
 			{
@@ -382,17 +472,118 @@ while ($fila = mysql_fetch_array($consulta_p)) {
 				
 			echo "</tr>";
 		}
-		elseif ($fila['pregunta']== 14 or $fila['pregunta']== 18)
+		elseif ($fila['pregunta']== 14)
 		{
+		  
 			echo "<tr>";	
 			echo "<td>".$q['p'.$fila['pregunta']]."</td>";
-			if ($fila['pregunta'] == 101)
-				echo "<tr>- NsNr.</tr>";
+			if ($fila['respuesta'] == 101)
+				echo "<td>- NsNr.</td>";
+			//elseif ($fila['pregunta'] == '101')
+			//	echo "<tr>- NsNr.</tr>";
 			else
 				echo "<td>".$fila['respuesta']."</td>";
 			
 			echo "<td></td>";
 			echo "</tr>";
+			
+			
+		}
+		elseif ($fila['pregunta']== 18)
+		{
+		  echo "</tr><tr><td>".$q['p'.$fila['pregunta']]."</td>";
+		  $valore=split(",",$fila['respuesta']);
+		  echo "<td>";
+		  //echo $fila['respuesta'];
+		  //echo var_dump($valore);
+		  $no_sabe = 1;
+		  
+		  foreach ($valore as $valor){
+		    if ($valor == 1){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."a"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 2){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."b"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 3){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."c"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 4){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."d"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 5){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."e"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 6){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."f"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 7){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."g"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 8){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."h"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 9){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."i"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 10){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."j"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 11){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."k"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 12){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."l"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		    if ($valor == 13){
+		      echo "- ";
+		      echo $q["p".$fila['pregunta']."m"];
+		      echo "<br>";
+		      $no_sabe = 0;
+		    }
+		  }
+		  
+		  if($no_sabe == 1){
+		    echo "- NsNr.";
+		  }
+		  echo "</td>";
+		  echo "<td></td></tr>";
 		}
 		elseif ($fila['pregunta']!= 30)
 		{
@@ -502,47 +693,6 @@ while ($fila = mysql_fetch_array($consulta_p)) {
 </center>
 
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-   
       
 <!--
       /**************************************************************************************************
