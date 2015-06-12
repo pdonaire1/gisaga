@@ -15,7 +15,7 @@ var $dbtype = 'mysql';
 var $host = 'localhost';
 var $user = 'GLADYSGISAGA';
 var $password = 'gisagandes';
-var $db = 'gisaga1';
+var $db = 'gisaga';
 var $dbprefix = 'pfg_';
 /* Server Settings */
 var $live_site = '';

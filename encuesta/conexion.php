@@ -1,11 +1,15 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$pw = "Pdonaire321";
-$db   = "encuesta_final1";
+//include("../configuration.php");
 
-$conexion=mysql_connect($host,$user,$pw);
-$db=mysql_select_db("encuesta_final1")or die ("Problemas al conectar con la Base de Datos----");
+$host = "localhost";
+$host_puerto = "localhost:3036";
+$user = 'GLADYSGISAGA';
+$pw   = 'gisagandes';
+$db   = 'gisaga';
+
+
+$conexion=mysql_connect($host,$user,$pw)or die(mysql_error());
+$db=mysql_select_db($db)or die ("Problemas al conectar con la Base de Datos----")or die(mysql_error());
 
 ?>

@@ -1,20 +1,64 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="joomla, Joomla" />
+  <meta name="title" content="Inicio" />
+  <meta name="author" content="Administrator" />
+  <meta name="description" content="Joomla! - el motor de portales dinámicos y sistema de administración de contenidos" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>GISAGA</title>
+  <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/content/attachments1.css" type="text/css" />
+  <link rel="stylesheet" href="../plugins/content/attachments.css" type="text/css" />
+  <link rel="stylesheet" href="../media/system/css/modal.css" type="text/css" />
+  <script type="text/javascript" src="../includes/js/joomla.javascript.js"></script>
+  <script type="text/javascript" src="../media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="../media/system/js/caption.js"></script>
+  <script type="text/javascript" src="../plugins/content/attachments_refresh.js"></script>
+  <script type="text/javascript" src="../media/system/js/modal.js"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+
+			$$('a.modal-button').each(function(el) {
+				el.addEvent('click', function(e) {
+					new Event(e).stop();
+					SqueezeBox.fromElement(el);
+				});
+			});
+		});
+		window.addEvent('domready', function(){ var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false}); });
+  </script>
+
+<link rel="stylesheet" href="../templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="../templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="../templates/a4joomla-aldora-free/css/template.css" type="text/css" />
+<link rel="stylesheet" href="../templates/a4joomla-aldora-free/css/grey.css" type="text/css" />
+<link rel="stylesheet" href="../templates/a4joomla-aldora-free/css/ie6.css" type="text/css" />
+<style type="text/css">
+
+</style>
+<script src="../templates/a4joomla-aldora-free/js/iepngfix_tilebg.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../templates/a4joomla-aldora-free/css/ie67.css" type="text/css" />
+
 <?php
 
-include("parte_arriba.html");
+//include("parte_arriba.html");
 //include("parte_arriba_encuesta.html");
 include ("conexion.php");
-include ("diccionario.php");
-?>
-
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!--
-↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
--->
-<?php
-	
+$idioma=$_GET['idioma'];
+if ($idioma=='' or $idioma=='espanyol')
+	include ("diccionario.php");
+if ($idioma=='ingles')
+	include ("diccionario_ingles.php");
+if ($idioma=='frances')
+	include ("diccionario_frances.php");
 ?>
 
 
@@ -32,13 +76,90 @@ include ("diccionario.php");
 	
 </script>
 
+
+<style type="text/css">
+ #logo {
+    width:330px;
+ }
+ #headerright {
+    width:600px;
+ } 
+ #search {
+   width:200px;
+ }
+ #topmenuwrap {
+ background: #2A6B25;
+ }
+</style>
+<!-- Modificado el favicon -->
+<link rel="shortcut icon" href="../favicon.ico">
+</head>
+<body>
+
+<div id="topmenuwrap" class="gainlayout">
+ <div id="topmenuwrap2" class="gainlayout" style="width:960px;">
+           <div id="topmenu" class="gainlayout">
+           		<div class="moduletable">
+					<ul id="mainlevel-nav"><li><a href="../" class="mainlevel-nav" >Inicio</a></li><li><a href="../index.php?option=com_content&amp;view=article&amp;id=47&amp;Itemid=29" class="mainlevel-nav" >¿Quienes Somos?</a></li><li><a href="../index.php?option=com_content&amp;view=frontpage&amp;Itemid=18" class="mainlevel-nav" >Noticias</a></li><li><a href="../encuesta/encuesta2.php" class="mainlevel-nav" >Realizar Encuesta</a></li><li><a href="../index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=37&amp;Itemid=59" class="mainlevel-nav" >Investigaciones y Publicaciones</a></li><li><a href="../index.php?option=com_kunena&amp;view=showcat&amp;catid=0&amp;Itemid=62" class="mainlevel-nav" >Foro</a></li><li><a href="../encuesta/index.php" class="mainlevel-nav" >
+					
+					
+					</a></li></ul>		</div>
+	
+           <div class="clr"></div>
+         </div> 
+            <!--<div id="search">
+          		<div class="moduletable">
+					<form action="index.php" method="post">
+	<div class="search">
+		<input name="searchword" id="mod_search_searchword" maxlength="20" alt="Search" class="inputbox" type="text" size="20" value="search..."  onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" />	</div>
+	<input type="hidden" name="task"   value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="58" />
+</form>		</div>
+	 
+		<div class="clr"></div>  
+        </div>-->
+    <div class="clr"></div>
+ </div>
+ <div class="clr"></div>
+</div> 
+
+<div id="allwrap" class="gainlayout">
+
+<div id="wrap" class="gainlayout" style="width:960px;">
+
+  	  <div id="pathway" class="gainlayout">
+        <span class="breadcrumbs pathway">
+</span>
+
+      <div class="clr"></div>
+	  </div>
+   
+
+  <div id="cbody" class="gainlayout">
+
+
+
+
+
+
+    <div id="sidebar" style="width:190px;">     
+      		<div class="moduletable_menu">
+		  
+		</div>
+  </div>
+
+    <div id="content60" style="width:490px;">    
+
+      <div id="content" >
+
 <!--
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 -->
-</head>
+<!--</head>
 <body class="background">
 	
-	<!--
+-->	<!--
 <div id="wrapper">
 <div id="header-wrap" class="clr">
     	<div id="header" class="container row clr">   
@@ -55,12 +176,23 @@ include ("diccionario.php");
 	<h2 color="#FFF" size="9"></h2>
 -->
 
-	
-		 <h3  color="#FFF" >Facultad de Ciencias, Económicas y Sociales FACES-ULA</h3>
-		 <!--<div>-->
-			<h4 color="#FFF" >Grupo de Investigación Sobre Agricultira Gerencia y Ambiente (GISAGA)</h4>
-			<h5 color="#FFF" >Núcleo La Liria Edificio "G" 2° Planta</h5>
-			<!--</div>-->
+	<center>
+		<a href="encuesta2.php?idioma=espanyol" style="font-size: 17px;" >[Español]</a>
+		<a href="encuesta2.php?idioma=ingles" style="font-size: 17px;" >[English]</a>
+		<a href="encuesta2.php?idioma=frances" style="font-size: 17px;">[Français]</a>
+		
+		<br>
+		 <h3  color="#FFF" ><center>
+			Facultad de Ciencias, Económicas y Sociales FACES-ULA
+			</center>
+		 </h3>
+		 <h4 color="#FFF" ><center>
+			Grupo de Investigación Sobre Agricultira Gerencia y Ambiente (GISAGA)
+		 </center></h4>
+		<h5 color="#FFF" ><center>
+			Núcleo La Liria Edificio "G" 2° Planta</center>
+		</h5>
+
 
 		</div>
 		
@@ -91,9 +223,9 @@ include ("diccionario.php");
 							<td>
 								<p>
 									<center>
-										Universidad de los Andes, Mérida, Venezuela <br/>
-										Escenerios de la industria petrolera mundial al 2030,<br/>
-										Encuesta de percepción aplicada a planificadores y expertos<br/>
+										<?php echo $q['membrete_uno']; ?><br/>
+										<?php echo $q['membrete_dos']; ?><br/>
+										<?php echo $q['membrete_tres']; ?><br/>
 									</center>
 								</p>
 							</td>
@@ -101,15 +233,14 @@ include ("diccionario.php");
 						<tr>
 							<td>
 								<p>
-									<strong>Objetivo de la investigación:</strong> Construir los escenarios de la industria 
-									petrolera al 2030 mediante la aplicación de una encuesta directa y <br />
-									estructurada a expertos y planificadores, para identificar los desafios que se impondrán a 
-									la industria petrolera venezolana en el periodo considerado.<br/>
-									<strong>Tipo de encuesta: </strong>directa y estructurada <strong>- Período de 
-									aplicación:</strong> Septiembre 2012 - 2015 <strong>- Forma de aplicación: </strong>
-									entrevista personal y on-line<br />
-									<strong>alcance: </strong>Nacional e internacional <strong>- Carácter de la información 
-									obtenida: </strong>anónima y confidencial.
+									<strong><?php echo $q['membrete_cuatro']; ?></strong> <?php echo $q['membrete_cinco']; ?>
+									<?php echo $q['membrete_seis']; ?><br />
+									<?php echo $q['membrete_siete']; ?><br/>
+									<strong><?php echo $q['membrete_ocho']; ?></strong><?php echo $q['membrete_nueve']; ?><strong>
+										<?php echo $q['membrete_diez']; ?><strong><?php echo $q['membrete_once']; ?></strong>
+									<?php echo $q['membrete_doce']; ?><br />
+									<strong><?php echo $q['membrete_trece']; ?></strong><?php echo $q['membrete_catorce']; ?><strong>
+										<?php echo $q['membrete_quince']; ?></strong><?php echo $q['membrete_dieciseis']; ?>
 									
 										
 								</p>
@@ -170,18 +301,10 @@ include ("diccionario.php");
 												<center>
 												<p> <?php echo $q['p0_8']; ?> 
 													<input type="text" disabled name="" value="<?php echo $h; ?>"/>
-<!--
-												   <input type="date" name="fecha" /></p>
-
-												<p>
-													Ciudad 
-													<input type="text" name="ciudad" />
-												</p>
--->
 											  <p>
 													<?php echo $q['p0_9']; ?> 
 													<?php
-													$consulta=mysql_query("select id_pais,pais from paises order by pais ASC");
+													$consulta=mysql_query("select id_pais,pais from paises order by pais ASC",$conexion);
 													echo "<select name='pais' id='pais'>";
 													echo "<option value='' >-------</option>";
 													while ($fila=mysql_fetch_array($consulta)){
@@ -191,7 +314,7 @@ include ("diccionario.php");
 													?>
 													<br><br><?php echo $q['p0_10']; ?>
 													<div id="estados">
-														<select name="edo">
+														<select name="estado">
 															<option value=""><?php echo $q['p0_11']; ?></option>
 														</select>
 													</div>
@@ -1246,13 +1369,7 @@ include ("diccionario.php");
 												<input type="number" name="p27v5" min="0" max="100"
 												onkeypress="return SoloNumeros(event)" onpaste="return false" />
 												<?php echo $q['p27e']; ?>
-												<br>
-												&nbsp;&nbsp; &nbsp; &nbsp;
-												&nbsp;&nbsp; &nbsp; &nbsp;
 												
-												<input type="number" name="p27v6" min="0" max="100"
-												onkeypress="return SoloNumeros(event)" onpaste="return false" />
-												<?php echo $q['p27f']; ?>
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;

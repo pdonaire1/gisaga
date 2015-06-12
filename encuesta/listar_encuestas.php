@@ -48,15 +48,13 @@ else
     </tr>
 <?php
     
-    
 include ("conexion.php");
-
-$consulta_p=mysql_query("select * from encuesta;", $conexion);
+$consulta_p=mysql_query("select * from encuesta;", $conexion)or die(mysql_error());
 
 
 
 /*********************************************************/
-$num_total_registros=mysql_query("SELECT COUNT(id_encuesta) FROM encuesta;", $conexion);
+$num_total_registros=mysql_query("SELECT COUNT(id_encuesta) FROM encuesta;", $conexion)or die(mysql_error());
 $num_total_registros = mysql_fetch_row($num_total_registros);
 $TAMANO_PAGINA = 5;//$_GET['numero'];
 //if (!$TAMANO_PAGINA)
@@ -123,7 +121,7 @@ while ($row = mysql_fetch_array($rs)) {
 <?php
 if ($total_paginas > 1) {
    if ($pagina != 1)
-      echo '<a href="'.$url.'?pagina='.($pagina-1).'"> anterior </a>';
+      echo '<a href="'.$url.'?pagina='.($pagina-1).'"> Anterior </a>';
       
       for ($i=1;$i<=$total_paginas;$i++) {
          if ($pagina == $i)
@@ -135,42 +133,11 @@ if ($total_paginas > 1) {
             echo '  <a href="'.$url.'?pagina='.$i.'">'.$i.'</a>  ';
       }
       if ($pagina != $total_paginas)
-         echo '<a href="'.$url.'?pagina='.($pagina+1).'"> siguiente </a>';
+         echo '<a href="'.$url.'?pagina='.($pagina+1).'"> Siguiente </a>';
 }
-/********************************************************/
-//echo $num_total_regustros;
-//while ($fila = mysql_fetch_array($consulta_p)) {
-//    ?>
-    
-    <!--<tr>
-//        <td>
-//            <a href="ver_encuesta.php?id=<?php echo $fila['id_encuesta']; ?>" >
-//                Ver Detalles
-//            </a>
-//        </td>
-//        <td>
-//            <?php
-//                //echo $fila['fecha'];
-//            ?>
-//        </td>
-//        <td>
-//            <?php
-//                //echo $fila['id_pais'];
-//            ?>
-//        </td>
-//        <td>
-//            <?php
-//                //echo $fila['observaciones'];
-//            ?>
-//        </td>
-//        
-//    </tr>-->
-    
-    <?php
-//}
     
 
-
+echo "<br><a href='index.php' >Regresar</a><br>";
 
 ?>
 </center>

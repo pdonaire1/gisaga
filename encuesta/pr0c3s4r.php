@@ -1,5 +1,155 @@
-<html>
-<body>
+
+<?php
+include("parte_arriba.html");
+function ValidarPeso8Valores($peso1,$peso2,$peso3,$peso4,$peso5,$peso6,$peso7,$peso8) {
+    $pregunta_peso = [
+	$peso1,
+	$peso2,
+	$peso3,
+	$peso4,
+	$peso5,
+	$peso6,
+	$peso7,
+	$peso8,
+    ];
+    
+    for ($i=0; $i<8; $i++) {
+	if ($pregunta_peso[$i]=="") {
+	    $pregunta_peso[$i]=0;
+	}
+    }
+    $pregunta_peso_aux = 0;
+    for ($i=1; $i<8; $i++) {
+	for ($j=0; $j<7; $j++) {
+	    if ($pregunta_peso[$j] > $pregunta_peso[$j+1]) {
+		$pregunta_peso_aux = $pregunta_peso[$j];
+		$pregunta_peso[$j] = $pregunta_peso[$j+1];
+		$pregunta_peso[$j+1] = $pregunta_peso_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    $entro = false;
+    
+    for ($i=0; $i<8; $i++) {
+	if ( ($pregunta_peso[$i] != 0) ) {
+	    if ( ($pregunta_peso[$i]!= 1) && ($entro == false) ) {
+		echo "Error Fatal peso.";
+		exit();
+	    }
+	    $entro = true;
+	    if ($pregunta_peso[$i+1]!=0) {
+	        if ( ($pregunta_peso[$i]+1) != $pregunta_peso[$i+1] ) {
+		    echo "Error Fatal peso.";
+		exit();
+	        }
+	    }
+	}
+    }
+    if ($entro == false) {
+	echo "Error Fatal peso.";
+	exit();
+    }
+
+}
+function ValidarPeso5Valores($peso1,$peso2,$peso3,$peso4,$peso5) {
+    $pregunta_peso = [
+	$peso1,
+	$peso2,
+	$peso3,
+	$peso4,
+	$peso5,
+    ];
+    
+    for ($i=0; $i<5; $i++) {
+	if ($pregunta_peso[$i]=="") {
+	    $pregunta_peso[$i]=0;
+	}
+    }
+    $pregunta_peso_aux = 0;
+    for ($i=1; $i<5; $i++) {
+	for ($j=0; $j<4; $j++) {
+	    if ($pregunta_peso[$j] > $pregunta_peso[$j+1]) {
+		$pregunta_peso_aux = $pregunta_peso[$j];
+		$pregunta_peso[$j] = $pregunta_peso[$j+1];
+		$pregunta_peso[$j+1] = $pregunta_peso_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    $entro = false;
+    
+    for ($i=0; $i<5; $i++) {
+	if ( ($pregunta_peso[$i] != 0) ) {
+	    if ( ($pregunta_peso[$i]!= 1) && ($entro == false) ) {
+		echo "Error Fatal peso.";
+		exit();
+	    }
+	    $entro = true;
+	    if ($pregunta_peso[$i+1]!=0) {
+	        if ( ($pregunta_peso[$i]+1) != $pregunta_peso[$i+1] ) {
+		    echo "Error Fatal peso.";
+		exit();
+	        }
+	    }
+	}
+    }
+    if ($entro == false) {
+	echo "Error Fatal peso.";
+	exit();
+    }
+
+}
+function ValidarPeso6Valores($peso1,$peso2,$peso3,$peso4,$peso5,$peso6) {
+    $pregunta_peso = [
+	$peso1,
+	$peso2,
+	$peso3,
+	$peso4,
+	$peso5,
+	$peso6,
+    ];
+    
+    for ($i=0; $i<6; $i++) {
+	if ($pregunta_peso[$i]=="") {
+	    $pregunta_peso[$i]=0;
+	}
+    }
+    $pregunta_peso_aux = 0;
+    for ($i=1; $i<6; $i++) {
+	for ($j=0; $j<5; $j++) {
+	    if ($pregunta_peso[$j] > $pregunta_peso[$j+1]) {
+		$pregunta_peso_aux = $pregunta_peso[$j];
+		$pregunta_peso[$j] = $pregunta_peso[$j+1];
+		$pregunta_peso[$j+1] = $pregunta_peso_aux;
+	    }
+	}
+    }
+    //console.log(p9);
+    $entro = false;
+    
+    for ($i=0; $i<6; $i++) {
+	if ( ($pregunta_peso[$i] != 0) ) {
+	    if ( ($pregunta_peso[$i]!= 1) && ($entro == false) ) {
+		echo "Error Fatal peso.";
+		exit();
+	    }
+	    $entro = true;
+	    if ($pregunta_peso[$i+1]!=0) {
+	        if ( ($pregunta_peso[$i]+1) != $pregunta_peso[$i+1] ) {
+		    echo "Error Fatal peso.";
+		exit();
+	        }
+	    }
+	}
+    }
+    if ($entro == false) {
+	echo "Error Fatal peso.";
+	exit();
+    }
+
+}
+?>
 
 <?php
 	// eliminar el archivo procesar3.php
@@ -56,8 +206,6 @@
 	$p9v7 = $_POST['p9v7'];
 	$p9v8 = $_POST['p9v8'];
 	$p9nsnr = $_POST['p9nsnr'];
-	echo "SUMAAAAA::::::";
-	//echo $p9v8 + $p9v8;
 	//____________________
 	$p10v1 = $_POST['p10v1'];
 	$p10v2 = $_POST['p10v2'];
@@ -99,7 +247,6 @@
 	$p18g = $_POST['p18l'];
 	$p18g = $_POST['p18m'];
 	$p18nsnr = $_POST['p18nsnr'];
-	echo "P18888888AAA:::::::::: $p18b";
 	$p18 = ""; //En este caso p18 es p18t o total, se dejó asi para no cambiar el resto de
 	// las variables del programa ya que esta pregunta fue cambiada sobbre la marcha
 	
@@ -141,7 +288,7 @@
 	$p27v3 = $_POST['p27v3'];
 	$p27v4 = $_POST['p27v4'];
 	$p27v5 = $_POST['p27v5'];
-	$p27v6 = $_POST['p27v6'];
+	//~ $p27v6 = $_POST['p27v6'];
 	
 	$p27nsnr = $_POST['p27nsnr'];
 	
@@ -261,7 +408,6 @@
 	)
 	{
 		$p18 = "$p18a, $p18b, $p18c, $p18d, $p18e, $p18f, $p18g, $p18h, $p18i, $p18j, $p18k, $p18l, $p18m";
-		echo "P 18 TOTAL ******** $p18";
 	}else
 	{
 		echo "Error fatal 18";
@@ -273,7 +419,7 @@
 		isset($p21_t) && !empty ($p21_t)
 	)
 	{
-		echo "continuo";
+		echo "";
 	}
 	elseif (
 		$p21 == 1 ||
@@ -395,70 +541,71 @@
 	// fin p8
 	
 	$p9t = $p9v1 + $p9v2 + $p9v3 + $p9v4 + $p9v5 + $p9v6 + $p9v7 + $p9v8;
-	if ($p9t == 36 and $p9nsnr != 101)
+	
+	if ($p9nsnr != 101)
 	{
+		ValidarPeso8Valores($p9v1,$p9v2,$p9v3,$p9v4,$p9v5,$p9v6,$p9v7,$p9v8);
 		$retornar = 0;
-		if (
-		    ($p9v1 == $p9v2) ||
-		    ($p9v1 == $p9v3) ||
-		    ($p9v1 == $p9v4) ||
-		    ($p9v1 == $p9v5) ||
-		    ($p9v1 == $p9v6) ||
-		    ($p9v1 == $p9v7) ||
-		    ($p9v1 == $p9v8)
-		){
-			$retornar = 1;
-			
-		}
-		if (
-		    ($p9v2 == $p9v3) ||
-		    ($p9v2 == $p9v4) ||
-		    ($p9v2 == $p9v5) ||
-		    ($p9v2 == $p9v6) ||
-		    ($p9v2 == $p9v7) ||
-		    ($p9v2 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p9v3 == $p9v4) ||
-		    ($p9v3 == $p9v5) ||
-		    ($p9v3 == $p9v6) ||
-		    ($p9v3 == $p9v7) ||
-		    ($p9v3 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p9v4 == $p9v5) ||
-		    ($p9v4 == $p9v6) ||
-		    ($p9v4 == $p9v7) ||
-		    ($p9v4 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p9v5 == $p9v6) ||
-		    ($p9v5 == $p9v7) ||
-		    ($p9v5 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p9v6 == $p9v7) ||
-		    ($p9v6 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p9v7 == $p9v8)
-		){
-			$retornar = 1;
-		}
-		if ($retornar == 1) {
-			echo "Error fatal p9";
-			exit();	
-		}
+		//if (
+		//    ($p9v1 == $p9v2) ||
+		//    ($p9v1 == $p9v3) ||
+		//    ($p9v1 == $p9v4) ||
+		//    ($p9v1 == $p9v5) ||
+		//    ($p9v1 == $p9v6) ||
+		//    ($p9v1 == $p9v7) ||
+		//    ($p9v1 == $p9v8)
+		//){echo "1";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v2 == $p9v3) ||
+		//    ($p9v2 == $p9v4) ||
+		//    ($p9v2 == $p9v5) ||
+		//    ($p9v2 == $p9v6) ||
+		//    ($p9v2 == $p9v7) ||
+		//    ($p9v2 == $p9v8)
+		//){echo "2";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v3 == $p9v4) ||
+		//    ($p9v3 == $p9v5) ||
+		//    ($p9v3 == $p9v6) ||
+		//    ($p9v3 == $p9v7) ||
+		//    ($p9v3 == $p9v8)
+		//){echo "3";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v4 == $p9v5) ||
+		//    ($p9v4 == $p9v6) ||
+		//    ($p9v4 == $p9v7) ||
+		//    ($p9v4 == $p9v8)
+		//){echo "4";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v5 == $p9v6) ||
+		//    ($p9v5 == $p9v7) ||
+		//    ($p9v5 == $p9v8)
+		//){echo "5";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v6 == $p9v7) ||
+		//    ($p9v6 == $p9v8)
+		//){echo "6";
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p9v7 == $p9v8)
+		//){echo "7";
+		//	$retornar = 1;
+		//}
+		//if ($retornar == 1) {
+		//	echo "Error fatal p9";
+		//	exit();	
+		//}
 		$p9total = "$p9v1, $p9v2, $p9v3, $p9v4, $p9v5, $p9v6, $p9v7, $p9v8";
 	}
 	elseif ($p9nsnr == 101)
@@ -482,40 +629,41 @@
 	
 	
 	$p10t = $p10v1 + $p10v2 + $p10v3 + $p10v4 + $p10v5;
-	if ($p10t == 15 and $p10nsnr != 101)
+	if ($p10nsnr != 101)
 	{
 		$retornar = 0;
-		if (
-		    ($p10v1 == $p10v2) ||
-		    ($p10v1 == $p10v3) ||
-		    ($p10v1 == $p10v4) ||
-		    ($p10v1 == $p10v5) 
-		){
-			$retornar = 1;
-			
-		}
-		if (
-		    ($p10v2 == $p10v3) ||
-		    ($p10v2 == $p10v4) ||
-		    ($p102 == $p10v5)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p10v3 == $p10v4) ||
-		    ($p10v3 == $p10v5)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p10v4 == $p10v5)
-		){
-			$retornar = 1;
-		}
-		if ($retornar == 1) {
-			echo "Error fatal p10";
-			exit();	
-		}
+		ValidarPeso5Valores($p10v1,$p10v2,$p10v3,$p10v4,$p10v5);
+		//if (
+		//    ($p10v1 == $p10v2) ||
+		//    ($p10v1 == $p10v3) ||
+		//    ($p10v1 == $p10v4) ||
+		//    ($p10v1 == $p10v5) 
+		//){
+		//	$retornar = 1;
+		//	
+		//}
+		//if (
+		//    ($p10v2 == $p10v3) ||
+		//    ($p10v2 == $p10v4) ||
+		//    ($p102 == $p10v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p10v3 == $p10v4) ||
+		//    ($p10v3 == $p10v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p10v4 == $p10v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if ($retornar == 1) {
+		//	echo "Error fatal p10";
+		//	exit();	
+		//}
 		$p10total = "$p10v1, $p10v2, $p10v3, $p10v4, $p10v5";
 	}
 	elseif ($p10nsnr == 101)
@@ -535,40 +683,41 @@
 	// fin p10
 	
 	$p11t = $p11v1 + $p11v2 + $p11v3 + $p11v4 + $p11v5;
-	if ($p11t == 15 and $p11nsnr != 101)
+	if ($p11nsnr != 101)
 	{
 		$retornar = 0;
-		if (
-		    ($p11v1 == $p11v2) ||
-		    ($p11v1 == $p11v3) ||
-		    ($p11v1 == $p11v4) ||
-		    ($p11v1 == $p11v5) 
-		){
-			$retornar = 1;
-			
-		}
-		if (
-		    ($p11v2 == $p11v3) ||
-		    ($p11v2 == $p11v4) ||
-		    ($p112 == $p11v5)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p11v3 == $p11v4) ||
-		    ($p11v3 == $p11v5)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p11v4 == $p11v5)
-		){
-			$retornar = 1;
-		}
-		if ($retornar == 1) {
-			echo "Error fatal p10";
-			exit();	
-		}
+		ValidarPeso5Valores($p11v1,$p11v2,$p11v3,$p11v4,$p11v5);
+		//if (
+		//    ($p11v1 == $p11v2) ||
+		//    ($p11v1 == $p11v3) ||
+		//    ($p11v1 == $p11v4) ||
+		//    ($p11v1 == $p11v5) 
+		//){
+		//	$retornar = 1;
+		//	
+		//}
+		//if (
+		//    ($p11v2 == $p11v3) ||
+		//    ($p11v2 == $p11v4) ||
+		//    ($p112 == $p11v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p11v3 == $p11v4) ||
+		//    ($p11v3 == $p11v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p11v4 == $p11v5)
+		//){
+		//	$retornar = 1;
+		//}
+		//if ($retornar == 1) {
+		//	echo "Error fatal p10";
+		//	exit();	
+		//}
 		$p11total = "$p11v1, $p11v2, $p11v3, $p11v4, $p11v5";
 	}
 	elseif ($p11nsnr == 101)
@@ -588,70 +737,71 @@
 	// fin p11
 	
 	$p19t = $p19v1 + $p19v2 + $p19v3 + $p19v4 + $p19v5 + $p19v6 + $p19v7 + $p19v8;
-	if ($p19t == 36 and $p19nsnr != 101)
+	if ($p19nsnr != 101)
 	{
 		$retornar = 0;
-		if (
-		    ($p19v1 == $p19v2) ||
-		    ($p19v1 == $p19v3) ||
-		    ($p19v1 == $p19v4) ||
-		    ($p19v1 == $p19v5) ||
-		    ($p19v1 == $p19v6) ||
-		    ($p19v1 == $p19v7) ||
-		    ($p19v1 == $p19v8)
-		){
-			$retornar = 1;
-			
-		}
-		if (
-		    ($p19v2 == $p19v3) ||
-		    ($p19v2 == $p19v4) ||
-		    ($p19v2 == $p19v5) ||
-		    ($p19v2 == $p19v6) ||
-		    ($p19v2 == $p19v7) ||
-		    ($p19v2 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p19v3 == $p19v4) ||
-		    ($p19v3 == $p19v5) ||
-		    ($p19v3 == $p19v6) ||
-		    ($p19v3 == $p19v7) ||
-		    ($p19v3 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p19v4 == $p19v5) ||
-		    ($p19v4 == $p19v6) ||
-		    ($p19v4 == $p19v7) ||
-		    ($p19v4 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p19v5 == $p19v6) ||
-		    ($p19v5 == $p19v7) ||
-		    ($p19v5 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p19v6 == $p19v7) ||
-		    ($p19v6 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p19v7 == $p19v8)
-		){
-			$retornar = 1;
-		}
-		if ($retornar == 1) {
-			echo "Error fatal p19";
-			exit();	
-		}
+		ValidarPeso8Valores($p19v1,$p19v2,$p19v3,$p19v4,$p19v5,$p19v6,$p19v7,$p19v8);
+		//if (
+		//    ($p19v1 == $p19v2) ||
+		//    ($p19v1 == $p19v3) ||
+		//    ($p19v1 == $p19v4) ||
+		//    ($p19v1 == $p19v5) ||
+		//    ($p19v1 == $p19v6) ||
+		//    ($p19v1 == $p19v7) ||
+		//    ($p19v1 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//	
+		//}
+		//if (
+		//    ($p19v2 == $p19v3) ||
+		//    ($p19v2 == $p19v4) ||
+		//    ($p19v2 == $p19v5) ||
+		//    ($p19v2 == $p19v6) ||
+		//    ($p19v2 == $p19v7) ||
+		//    ($p19v2 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p19v3 == $p19v4) ||
+		//    ($p19v3 == $p19v5) ||
+		//    ($p19v3 == $p19v6) ||
+		//    ($p19v3 == $p19v7) ||
+		//    ($p19v3 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p19v4 == $p19v5) ||
+		//    ($p19v4 == $p19v6) ||
+		//    ($p19v4 == $p19v7) ||
+		//    ($p19v4 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p19v5 == $p19v6) ||
+		//    ($p19v5 == $p19v7) ||
+		//    ($p19v5 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p19v6 == $p19v7) ||
+		//    ($p19v6 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p19v7 == $p19v8)
+		//){
+		//	$retornar = 1;
+		//}
+		//if ($retornar == 1) {
+		//	echo "Error fatal p19";
+		//	exit();	
+		//}
 		$p19total = "$p19v1, $p19v2, $p19v3, $p19v4, $p19v5, $p19v6, $p19v7, $p19v8";
 	}
 	elseif ($p19nsnr == 101)
@@ -719,50 +869,51 @@
 	
 	
 	
-	$p27t = $p27v1 + $p27v2 + $p27v3 + $p27v4 + $p27v5 + $p27v6;
-	if ($p27t == 21 and $p27nsnr != 101)
+	$p27t = $p27v1 + $p27v2 + $p27v3 + $p27v4 + $p27v5;
+	if ($p27nsnr != 101)
 	{
 		$retornar = 0;
-		if (
-		    ($p27v1 == $p27v2) ||
-		    ($p27v1 == $p27v3) ||
-		    ($p27v1 == $p27v4) ||
-		    ($p27v1 == $p27v5) ||
-		    ($p27v1 == $p27v6) 
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p27v2 == $p27v3) ||
-		    ($p27v2 == $p27v4) ||
-		    ($p27v2 == $p27v5) ||
-		    ($p27v2 == $p27v6)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p27v3 == $p27v4) ||
-		    ($p27v3 == $p27v5) ||
-		    ($p27v3 == $p27v6)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p27v4 == $p27v5) ||
-		    ($p27v4 == $p27v6)
-		){
-			$retornar = 1;
-		}
-		if (
-		    ($p27v5 == $p27v6)
-		){
-			$retornar = 1;
-		}
-		if ($retornar == 1) {
-			echo "Error fatal p27";
-			exit();	
-		}
-		$p27total = "$p27v1, $p27v2, $p27v3, $p27v4, $p27v5, $p27v6, $p27v7, $p27v8";
+		ValidarPeso5Valores($p27v1,$p27v2,$p27v3,$p27v4,$p27v5);
+		//if (
+		//    ($p27v1 == $p27v2) ||
+		//    ($p27v1 == $p27v3) ||
+		//    ($p27v1 == $p27v4) ||
+		//    ($p27v1 == $p27v5) ||
+		//    ($p27v1 == $p27v6) 
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p27v2 == $p27v3) ||
+		//    ($p27v2 == $p27v4) ||
+		//    ($p27v2 == $p27v5) ||
+		//    ($p27v2 == $p27v6)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p27v3 == $p27v4) ||
+		//    ($p27v3 == $p27v5) ||
+		//    ($p27v3 == $p27v6)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p27v4 == $p27v5) ||
+		//    ($p27v4 == $p27v6)
+		//){
+		//	$retornar = 1;
+		//}
+		//if (
+		//    ($p27v5 == $p27v6)
+		//){
+		//	$retornar = 1;
+		//}
+		//if ($retornar == 1) {
+		//	echo "Error fatal p27";
+		//	exit();	
+		//}
+		$p27total = "$p27v1, $p27v2, $p27v3, $p27v4, $p27v5";
 	}
 	elseif ($p27nsnr == 101)
 	{
@@ -771,9 +922,6 @@
 		$p27v3 = "";
 		$p27v4 = "";
 		$p27v5 = "";
-		$p27v6 = "";
-		$p27v7 = "";
-		$p27v8 = "";
 		$p27total = "101";
 	}
 	else
@@ -831,7 +979,6 @@
 		{
 			$consulta = mysql_query("select id_estados, estado from estados WHERE relacion='".$fila[0]."'")or die (mysql_error());
 			while ($fila = mysql_fetch_array($consulta)) {
-				
 				if ($estado == $fila[0])
 				{
 					$bandera = 1;
@@ -840,7 +987,7 @@
 			}
 			if ($bandera == 0)
 			{
-				echo "Error fatal: estado";
+				echo "Error fatal: estado.";
 				exit();
 			}
 			$bandera = 1;
@@ -853,22 +1000,22 @@
 		exit();
 	}
 	
-	
+	mysql_set_charset('utf8',$con);
 	//~ mysql_select_db($db,$con) or die ("Problemas al conectar con la Base de Datos#");
 	
 	mysql_query("INSERT INTO encuesta (`perfil`, `fecha`, `grupo_objetivo`, `id_pais`, `id_estados`, `observaciones`)
 	             VALUES ('$perfil', '$fecha', '$grupo_objetivo', '$pais', '$estado', '$observaciones');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_encuesta = mysql_insert_id($con);
-	echo "<br>id perfil: $id_encuesta <br>";
-	echo $id_encuesta;
+	//echo "<br>id perfil: $id_encuesta <br>";
+	//echo $id_encuesta;
 	//    pregunta 1:::
 	mysql_query("INSERT INTO respuesta (`respuesta`, `respuesta2`, `respuesta3`,`pregunta`)
 	             VALUES ('$p1total', '' , '', '1');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta: $id_respuesta <br>";
-	echo $id_respuesta;
+	//echo "<br>id respuesta: $id_respuesta <br>";
+	//echo $id_respuesta;
 	
 	mysql_query("INSERT INTO encuesta_respuesta (`id_encuesta`, `id_respuesta`)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con) 
@@ -879,7 +1026,7 @@
 	             VALUES ('$p2', '$p2_t' , '','2');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con) 
@@ -890,7 +1037,7 @@
 	             VALUES ('$p3total', '' , '','3');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con) 
@@ -901,7 +1048,7 @@
 	             VALUES ('$p4total', '' , '', '4');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con) 
@@ -913,7 +1060,7 @@
 	             VALUES ('$p5', '' , '','5');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -925,7 +1072,7 @@
 	             VALUES ('$p6', '$p6_t' , '', '6');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -938,7 +1085,7 @@
 	             VALUES ('$p7', '' , '', '7');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -949,7 +1096,7 @@
 	             VALUES ('$p8total', '' , '', '8');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -961,7 +1108,7 @@
 	             VALUES ('$p9total', '' , '', '9');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -972,7 +1119,7 @@
 	             VALUES ('$p10total', '' , '', '10');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -985,7 +1132,7 @@
 	             VALUES ('$p11total', '' , '', '11');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -997,7 +1144,7 @@
 	             VALUES ('$p12', '' , '', '12');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1010,7 +1157,7 @@
 	             VALUES ('$p13', '' , '', '13');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1023,7 +1170,7 @@
 	             VALUES ('$p14', '' , '', '14');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1035,7 +1182,7 @@
 	             VALUES ('$p15', '' , '', '15');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1048,7 +1195,7 @@
 	             VALUES ('$p16', '' , '', '16');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1061,7 +1208,7 @@
 	             VALUES ('$p17', '$p17_t' , '', '17');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1074,7 +1221,7 @@
 	             VALUES ('$p18', '' , '', '18');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 	$id_respuesta = mysql_insert_id($con);
-	echo "<br>id respuesta2: $id_respuesta <br>";
+	//echo "<br>id respuesta2: $id_respuesta <br>";
 	
 	mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 	             VALUES ('$id_encuesta', '$id_respuesta');", $con)
@@ -1082,7 +1229,7 @@
 	
 	
 	//   pregunta 19:::
-	echo "LLenado en la pregunta 19****************<br> llenar = ";
+	//echo "LLenado en la pregunta 19****************<br> llenar = ";
 	echo llenar($p19total, "","", 19, $id_encuesta, $con);
 	
 	//   pregunta 20:::
@@ -1127,10 +1274,10 @@
 	
 	
 	$split = split(",", $p19total);
-	echo "<br>split ======= $split <br>";
-	var_dump($split);
+	//echo "<br>split ======= $split <br>";
+	//var_dump($split);
 	foreach ($split as $i){
-		echo "I: $i <br>";
+		//echo "I: $i <br>";
 	}
 	
 	function llenar($resp, $resp2="", $resp3="", $pregunta, $IdEncuesta, $con)
@@ -1139,19 +1286,22 @@
 	             VALUES ('$resp', '$resp2' , '$resp3', '$pregunta');", $con) 
 	             or die ("problemas al insertar datos 1: ".mysql_error() );
 		$id_respuesta = mysql_insert_id($con);
-		echo "<br>id respuesta $pregunta: $id_respuesta <br>";
+		//echo "<br>id respuesta $pregunta: $id_respuesta <br>";
 		
 		mysql_query("INSERT INTO encuesta_respuesta (id_encuesta, id_respuesta)
 					 VALUES ('$IdEncuesta', '$id_respuesta');", $con)
 					 or die ("problemas al insertar datos 2: ".mysql_error() );             
 		
-		return true;
+		//return true;
 	}
 	
+	echo "<center>";
+	include ("diccionario.php");
+	echo "$q[datos_insertados]";
+	echo "<br><a href='../' >$q[regresar]";
+	echo "</center>";
 	
 	
-	
-	echo "Datos Insertados";
-	
+	include("parte_abajo.html");
 ?>
-</body></html>
+

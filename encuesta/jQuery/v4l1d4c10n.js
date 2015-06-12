@@ -307,6 +307,11 @@ function validar(form){
 		alert("Por favor seleccione el pais");
 		return false;
 	}
+	if (form.elements['estado'].value=="")
+	{
+		alert("Por favor seleccione el estado");
+		return false;
+	}
 	
 	
 	
@@ -320,6 +325,7 @@ function validar(form){
 		//~ break;
 	  //~ }
 	//~ }
+	
 	for(var i = 0;i < form.elements['p2'].length;i++) 
 	{
 		if(form.elements['p2'][i].checked) 
@@ -791,7 +797,7 @@ function validar(form){
 	p96 = 0.0;
 	if (form.elements['p27nsnr'].checked == false)
 	{
-		ValidarPeso6Valores("27");
+		ValidarPeso5Valores("27");
 	}
 	else{
 		p91=0.0;

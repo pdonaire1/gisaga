@@ -1,7 +1,25 @@
 <?php
 	$q = array (
 		
-	
+		"membrete_uno" => "Universidad de los Andes, Mérida, Venezuela",
+		"membrete_dos" => "Escenerios de la industria petrolera mundial al 2030,",
+		"membrete_tres" => "Encuesta de percepción aplicada a planificadores y expertos",
+		
+		"membrete_cuatro" => "Objetivo de la investigación:",
+		"membrete_cinco" => "Construir los escenarios de la industria ",
+		"membrete_seis" => "petrolera al 2030 mediante la aplicación de una encuesta directa y ",
+		"membrete_siete" => "estructurada a expertos y planificadores, para identificar los desafios que se impondrán a 
+						la industria petrolera venezolana en el periodo considerado.",
+		"membrete_ocho" => "Tipo de encuesta: ",
+		"membrete_nueve" => "directa y estructurada ",
+		"membrete_diez" => "- Período de aplicación:</strong> Septiembre 2012 - 2015 ",
+		"membrete_once" => "- Forma de aplicación: ",
+		"membrete_doce" => "entrevista personal y on-line",
+		"membrete_trece" => "- Alcance: ",
+		"membrete_catorce" => "Nacional e internacional ",
+		"membrete_quince" => "- Carácter de la información obtenida: ",
+		"membrete_dieciseis" => "anónima y confidencial.",
+		
 		"p1" => "1. ¿Cómo se caracterizará el desempeño económico global entre 2012 y 2030?",
 		"p1a" => "Recuperación de la reciente crisis económica", 
 		"p1b" => "Alto desempleo en los países desarrollados",
@@ -63,7 +81,7 @@
 		"p8e" => "Otras fuentes renovables (eólica, geotérmica, hidroeléctrica, maremotriz, solar,
 				  undimotriz, biomasa, biocombustibles)",
 		"p8f" => "NsNr",
-		
+		"otras_fuentes" => "Otras fuentes renovables",
 		"p9" => "9. ¿Cuáles energías alternativas tendrán mayor crecimiento en el consumo mundial
 				 de energía durante los próximos 20 años? Ordene de mayor (1 en adelante) a menor 
 				 crecimiento",
@@ -231,9 +249,7 @@
 		"p27b" => "Gas",
 		"p27c" => "Carbón",
 		"p27d" => "Energía nuclear",
-		"p27e" => "Otras fuentes renovables",
-		"p27f" => "Otras fuentes renovables (eólica, geotérmica, hidroeléctrica, maremotriz, 
-				solar, undimotriz, biomasa, biocombustibles)",
+		"p27e" => "Otras fuentes renovables (eólica, geotérmica, hidroeléctrica, maremotriz, solar, undimotriz, biomasa, biocombustibles)",
 		"p27g" => "NsNr",
 		
 		
@@ -290,9 +306,8 @@
 		
 		"DebeSumar" => "Debe sumar 100%",
 		
-		
-		
-		
+		"datos_insertados" => "Gracias por participar en la encuesta.",
+		"regresar" => "Regresar",
 		
 		
 		
