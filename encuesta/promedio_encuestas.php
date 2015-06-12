@@ -225,6 +225,8 @@ $p16_a = 0;
 $p16_b = 0;
 $p16_c = 0;
 
+$p16_d = 0;
+
 $p17_total = 0;
 $p17_a = 0;
 $p17_b = 0;
@@ -587,6 +589,8 @@ while($row = mysql_fetch_array($consulta_p)){
       $p16_b += 1;
     elseif ($row['respuesta'] == 3)
       $p16_c += 1;
+    elseif ($row['respuesta'] == 4)
+      $p16_d += 1;
   }
   elseif ($row['pregunta'] == 17){
     $p17_total += 1;
@@ -1157,15 +1161,19 @@ echo "<br><br>";
 
 //p16 
 echo "<b>$q[p16] <br>Total:</b><br>";
-echo "$q[p16a]: $p16_a <br> $q[p16b]: $p16_b <br> $q[p16c]: $p16_c <br>";
+
+echo "$q[p16a]: $p16_a <br> $q[p16b]: $p16_b <br> $q[p16c]: $p16_c <br> $q[p16d]: $p16_d <br>";
 echo "<b>Promedio:</b><br>";
 echo "$q[p16a]: ".$p16_a/$p16_total." <br> $q[p16b]: ".$p16_b/$p16_total."";
-echo "<br> $q[p16c]: ".$p16_c/$p16_total."<br> ";
-$arr=array($q['p16a'],$q['p16b'],$q['p16c']);
+echo "<br> $q[p16c]: ".$p16_c/$p16_total;
+echo "<br> $q[p16d]: ".$p16_d/$p16_total."<br> ";
+$arr=array($q['p16a'],$q['p16b'],$q['p16c'],$q['p16d']);
+
 $arrdos=array(
 	$p16_a,
 	$p16_b,
 	$p16_c,
+	$p16_d,
 );
 $tamanyo=1010;
 $arr=array_envia($arr); 

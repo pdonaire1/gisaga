@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
 
@@ -152,29 +151,9 @@ if ($idioma=='frances')
     <div id="content60" style="width:490px;">    
 
       <div id="content" >
-
-<!--
-↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
--->
-<!--</head>
-<body class="background">
-	
--->	<!--
-<div id="wrapper">
-<div id="header-wrap" class="clr">
-    	<div id="header" class="container row clr">   
-            <div id="logo" class="col span_4">
-<a href="/GISAGA"><img src="/GISAGA/images/ula_hoga.gif" alt="Business" width="200" height="100" /></a>
-                 
-                                                <div id="site-description"></div>
-                  
-            </div><!-- /logo -->
             
 <center>
 <div id="">
-<!--
-	<h2 color="#FFF" size="9"></h2>
--->
 
 	<center>
 		<a href="encuesta2.php?idioma=espanyol" style="font-size: 17px;" >[Español]</a>
@@ -318,31 +297,7 @@ if ($idioma=='frances')
 															<option value=""><?php echo $q['p0_11']; ?></option>
 														</select>
 													</div>
-														<?php 
-														/*
-														//~ header("Content-Type: text/html;charset=utf-8");
-														//~ mysql_query("SET NAMES 'utf8'");
-														$consulta=mysql_query("select id,pais from paises order by pais ASC")
-																  or die("problemas en consulta".mysql_error());;
-														//~ $con = mysql_connect($host,$user,$pw)
-																   //~ or die("problemas al conectar server");	
-															//~ mysql_select_db($db,$con)
-														    //~ or die("problemas al conectar db");
-														    
-														    //~ $Registros = mysql_query("SELECT * FROM Country", $con)
-																		 //~ or die("problemas en consulta".mysql_error());
-																		 
-															//~ while ($Reg = mysql_fetch_array($Registros))
-															//~ {
-															echo "<select name='pais' id='pais'>";
-															while ($Reg=mysql_fetch_array($consulta))
-															{
-																echo "<option value='".$Reg[0]."'>".$Reg[1]."</option>";
-															}
-															
-															echo "</select>";
-															* */
-														?>
+
 												</p>
 												</center>
 											</td>
@@ -434,6 +389,7 @@ if ($idioma=='frances')
 <!--
 													<input type="text" name="p2_a" size="80" />
 -->
+
 											<center>
 											<table>
 												<tr>
@@ -650,7 +606,6 @@ if ($idioma=='frances')
 												
 											</p>
 											<p>
-												
 
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												<?php echo $q['p9']; ?>
@@ -860,6 +815,7 @@ if ($idioma=='frances')
 <!--
 											---------------------------------------------------------------------
 -->
+
 											<p>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												
@@ -940,11 +896,14 @@ if ($idioma=='frances')
 												<input type="radio" name="p16" value="3" checked />
 												<?php echo $q['p16c']; ?>
 												<br>
+
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												&nbsp;&nbsp; &nbsp; &nbsp;
+												<input type="radio" name="p16" value="4" checked />
+												<?php echo $q['p16d']; ?>
+												<br>
 												
 											</p>
-<!--
-											-------------------------------------------------------------------------
--->
 											<p>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												<?php echo $q['p17']; ?>
@@ -978,7 +937,7 @@ if ($idioma=='frances')
 												<br>
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
-												<!--<input type="text" name="p18" size="107" />-->
+
 												<input type="checkbox" name="p18a" value="1">
 												<?php echo $q['p18a']; ?>
 												<input type="checkbox" name="p18b" value="2">
@@ -1379,7 +1338,8 @@ if ($idioma=='frances')
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												&nbsp;&nbsp; &nbsp; &nbsp;
 												<input type="checkbox" name="p27nsnr" value="101" />
-												<?php echo $q['p27g']; ?>
+												<?php echo $q['p27f']; ?>
+
 												<br>
 											
 											</p>

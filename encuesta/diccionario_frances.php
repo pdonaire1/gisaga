@@ -149,12 +149,12 @@
 		"p15b" => "Non",
 		"p15c" => "Nsp",
 		
-		"p16" => "16. Parmi les types suivants de combustibles,
-			lequel pourrait avoir une signification importante dans l’augmentation
-			dans les prochains 20 ans ? ",
-		"p16a" => "Gaz naturel liquéfié",
-		"p16b" => "Combustibles conventionnels",
-		"p16c" => "Nsp",
+		"p16" => "16. Parmi les types suivants de carburant, ce qui pourrait avoir une 
+					signification importante dans l'apport accru dans les années à venir?",
+		"p16a" => "Gaz Naturel Liquéfié",
+		"p16b" => "Carburants classiques",
+		"p16c" => "Le carburant non conventionnel",
+		"p16d" => "Je ne sais pas / Sans réponse",
 		
 		"p17" => "17. Est-ce que l’OPEP continuera à jouer un rôle important
 			dans l’offre mondiale du pétrole en 2030 ?",
@@ -264,6 +264,7 @@
 		"p27e" => "Autre sources renouvelables (éoliennes, géothermique,
 			hydroélectrique, marémotrice, solaire, biomasse, biocombustible)",
 		"p27g" => "Nsp",
+		"p27f" => "Nsp",
 		
 		
 		"p28" => "28 Croyez-vous que les rapports et les études que

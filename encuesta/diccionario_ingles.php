@@ -152,13 +152,13 @@
 		"p15a" => "Yes",
 		"p15b" => "No",
 		"p15c" => "Don't know / Refuse to answer",
-		
-		"p16" => "16. Among the following types of fuels, which ones
-			will have a significant role in the supply growth in the
-			next 20 years?",
-		"p16a" => "Natural gas liquids",
+
+		"p16" => "16. Which of the following types of fuel could have a significant 
+				impact in the increases supply in the coming years?",
+		"p16a" => "Liquefied Natural Gas",
 		"p16b" => "Conventional fuels",
-		"p16c" => "Don't know / Refuse to answer",
+		"p16c" => "Unconventional fuel",
+		"p16d" => "Don’t know/ Unanswered",
 		
 		"p17" => "17. Do you believe that OPEC will be exerting its
 			predominant role in the world oil supply in 2030?",
@@ -271,6 +271,7 @@
 			hydroelectric, tidal energy, solar energy, wave energy,
 			biomass, biofuels)",
 		"p27g" => "Don't know / Refuse to answer",
+		"p27f" => "Don't know / Refuse to answer",
 		
 		
 		"p28" => "28. Do you believe that the reports and informs related

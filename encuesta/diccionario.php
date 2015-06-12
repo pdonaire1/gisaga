@@ -145,8 +145,9 @@
 		"p16" => "16. Entre los siguientes tipos de combustible, ¿cuál podría tener un significado 
 					importante en el aumento de la oferta en los próximos 20 años?",
 		"p16a" => "Gas natural licuado",
-		"p16b" => "Combustibles no convencionales",
-		"p16c" => "NsNr",
+		"p16b" => "Combustibles convencionales",
+		"p16c" => "Combustibles no convencionales",
+		"p16d" => "NsNr",
 		
 		"p17" => "17. ¿Continuará la OPEP teniendo el rol 
 				predominante en la oferta mundial de petróleo en el 2030?",
@@ -251,6 +252,7 @@
 		"p27d" => "Energía nuclear",
 		"p27e" => "Otras fuentes renovables (eólica, geotérmica, hidroeléctrica, maremotriz, solar, undimotriz, biomasa, biocombustibles)",
 		"p27g" => "NsNr",
+		"p27f" => "NsNr",
 		
 		
 		"p28" => "28. ¿Cree usted que los reportes e informes que realizan proyecciones y 

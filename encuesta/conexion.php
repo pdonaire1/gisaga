@@ -4,8 +4,8 @@
 
 $host = "localhost";
 $host_puerto = "localhost:3036";
-$user = 'GLADYSGISAGA';
-$pw   = 'gisagandes';
+$user = 'root';
+$pw   = '123';
 $db   = 'gisaga';
 
 

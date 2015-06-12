@@ -13,10 +13,10 @@ var $debug_lang = '0';
 /* Database Settings */
 var $dbtype = 'mysql';
 var $host = 'localhost';
-var $user = 'GLADYSGISAGA';
-var $password = 'gisagandes';
+var $user = 'root';
+var $password = '123';
 var $db = 'gisaga';
-var $dbprefix = 'pfg_';
+var $dbprefix = 'abc_';
 /* Server Settings */
 var $live_site = '';
 var $secret = 'M7lFtTOZjxPoIbp6';
