@@ -1,0 +1,28 @@
+<?php 
+include ("jpgraph-1.27.1/src/jpgraph.php");
+include ("jpgraph-1.27.1/src/jpgraph_pie.php");
+
+// Some data
+$data = array(40,21,17,14,23);
+
+// Create the Pie Graph. 
+$graph = new PieGraph(600,400,"auto");
+$graph->SetShadow();
+
+// Set A title for the plot
+$graph->title->Set("");
+$graph->title->SetFont(FF_FONT1,FS_BOLD);
+
+// Create
+$p1 = new PiePlot($data);
+$p1->SetLegends(array(
+"Petróleo",
+"Gas",
+"Carbón",
+"Energía nuclear",
+"Otras fuentes renovables",
+"Otras fuentes renovables (eólica, geotérmica, hidroeléctrica, maremotriz, solar, undimotriz, biomasa, biocombustibles)"
+));
+$graph->Add($p1);
+$graph->Stroke();
+?>
