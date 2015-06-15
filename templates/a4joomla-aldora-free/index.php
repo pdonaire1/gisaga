@@ -224,4 +224,8 @@ cambiado el 26-10-2014
 </div>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 3a391f2132d6a861045b892faf264f1c06a52590

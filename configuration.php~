@@ -16,7 +16,11 @@ var $host = 'localhost';
 var $user = 'root';
 var $password = '123';
 var $db = 'gisaga';
+<<<<<<< HEAD
 var $dbprefix = 'abc_';
+=======
+var $dbprefix = 'pfg_';
+>>>>>>> 3a391f2132d6a861045b892faf264f1c06a52590
 /* Server Settings */
 var $live_site = '';
 var $secret = 'M7lFtTOZjxPoIbp6';
